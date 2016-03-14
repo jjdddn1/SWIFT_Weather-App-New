@@ -35,10 +35,10 @@ class AboutViewController: UIViewController {
         }
     }
     @IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
-        foreCastButtonPressed(UIButton())
+        backButtonPressed(UIButton())
     }
     @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
-        foreCastButtonPressed(UIButton())
+        backButtonPressed(UIButton())
     }
     /*
     // MARK: - Navigation
