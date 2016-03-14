@@ -41,12 +41,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewDidAppear(animated: Bool) {
-        tableViewOriginFrame = tableView.frame
         UIView.animateWithDuration(0.5) { () -> Void in
             self.tableView.transform = CGAffineTransformMakeTranslation(0, 0)
             self.beforeViewController.view.transform = CGAffineTransformMakeTranslation(self.tableView.frame.width / 2 , 0)
             self.view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
         }
+        tableViewOriginFrame = tableView.frame
+
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("menuCell", forIndexPath: indexPath)
@@ -62,6 +63,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             break
         case 3:
             cell.textLabel?.text = "Rate me in App Store"
+        case 4:
+            cell.textLabel?.text = "About"
         default:
             break
         }
@@ -85,12 +88,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             sendFeedback()
             break
         case 2:
-            enlargeMenu()
+            enlargeMenu("shareSegue")
             break
         case 3:
             if let requestUrl = NSURL(string: "https://itunes.apple.com/us/app/swift-weather-app-help-you/id1093067051?l=zh&ls=1&mt=8") {
                 UIApplication.sharedApplication().openURL(requestUrl)
             }
+            break
+        case 4:
+            enlargeMenu("aboutSegue")
             break
         default:
             break
@@ -118,7 +124,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 5
     }
 
 
@@ -160,13 +166,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
-    func enlargeMenu(){
+    func enlargeMenu(segueName :String ){
         self.view.userInteractionEnabled = false
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.tableView.frame = self.view.frame
             DataStruct.enterShare = true
             }) { (Bool) -> Void in
-                self.performSegueWithIdentifier("shareSegue", sender: self)
+                self.performSegueWithIdentifier(segueName, sender: self)
                 self.view.userInteractionEnabled = true
         }
     }
@@ -253,7 +259,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if segue.identifier == "shareSegue"{
             let des = segue.destinationViewController as! ShareViewController
             des.beforeViewController = self
+        }else if segue.identifier == "aboutSegue"{
+            let des = segue.destinationViewController as! AboutViewController
+            des.beforeViewController = self
         }
+        
     }
 
 

@@ -46,7 +46,7 @@ class ShareViewController: UIViewController, MFMessageComposeViewControllerDeleg
     @IBAction func backButtonPressed(sender: UIButton) {
         self.dismissViewControllerAnimated(true,completion:  nil )
         DataStruct.enterShare = false
-        self.beforeViewController.CancelButtonPressed(UIButton())
+        self.beforeViewController.shrinkMenu()
     }
 
     @IBAction func FBButtonPress(sender: AnyObject) {
@@ -154,5 +154,11 @@ class ShareViewController: UIViewController, MFMessageComposeViewControllerDeleg
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
+        backButtonPressed(UIButton())
+    }
+    @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
+        backButtonPressed(UIButton())
+    }
 
 }
