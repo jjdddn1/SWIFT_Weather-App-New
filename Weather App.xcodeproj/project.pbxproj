@@ -30,6 +30,8 @@
 		8629B04A1C96332E00463DE6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B0491C96332E00463DE6 /* DetailViewController.swift */; };
 		8629B04C1C96414500463DE6 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B04B1C96414500463DE6 /* DetailTableViewController.swift */; };
 		8629B04E1C965EAE00463DE6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B04D1C965EAE00463DE6 /* SearchViewController.swift */; };
+		86BC3C761C968AA800A91FE5 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */; };
+		86BC3C781C96A85900A91FE5 /* loading2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 86BC3C771C96A85900A91FE5 /* loading2.gif */; };
 		86EDCBF81C93EA1D00812D2B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EDCBF51C93EA1D00812D2B /* Alamofire.framework */; };
 		86EDCBF91C93EA1D00812D2B /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EDCBF61C93EA1D00812D2B /* Spring.framework */; };
 		86EDCBFA1C93EA1D00812D2B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EDCBF71C93EA1D00812D2B /* SwiftyJSON.framework */; };
@@ -59,7 +61,6 @@
 		86EDCC311C93EB6600812D2B /* cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EDCC161C93EB6600812D2B /* cloudy.png */; };
 		86EDCC321C93EB6600812D2B /* partly-cloudy-day.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EDCC171C93EB6600812D2B /* partly-cloudy-day.png */; };
 		86EDCC331C93EB6600812D2B /* partly-cloudy-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EDCC181C93EB6600812D2B /* partly-cloudy-night.png */; };
-		86EDCC341C93EB6600812D2B /* CROPPED-2015-05-21 18.17.50_副本.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 86EDCC191C93EB6600812D2B /* CROPPED-2015-05-21 18.17.50_副本.jpg */; };
 		86EDCC351C93EB6600812D2B /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 86EDCC1A1C93EB6600812D2B /* bg.jpg */; };
 		86EDCC361C93EB6600812D2B /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EDCC1B1C93EB6600812D2B /* plus.png */; };
 		86EDCC3A1C93F09F00812D2B /* Double_Left.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EDCC391C93F09F00812D2B /* Double_Left.png */; };
@@ -121,6 +122,8 @@
 		8629B0491C96332E00463DE6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8629B04B1C96414500463DE6 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		8629B04D1C965EAE00463DE6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		86BC3C771C96A85900A91FE5 /* loading2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading2.gif; sourceTree = "<group>"; };
 		86EDCBF51C93EA1D00812D2B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		86EDCBF61C93EA1D00812D2B /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = "Pods/../build/Debug-iphoneos/Spring.framework"; sourceTree = "<group>"; };
 		86EDCBF71C93EA1D00812D2B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -150,7 +153,6 @@
 		86EDCC161C93EB6600812D2B /* cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudy.png; sourceTree = "<group>"; };
 		86EDCC171C93EB6600812D2B /* partly-cloudy-day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partly-cloudy-day.png"; sourceTree = "<group>"; };
 		86EDCC181C93EB6600812D2B /* partly-cloudy-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partly-cloudy-night.png"; sourceTree = "<group>"; };
-		86EDCC191C93EB6600812D2B /* CROPPED-2015-05-21 18.17.50_副本.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "CROPPED-2015-05-21 18.17.50_副本.jpg"; sourceTree = "<group>"; };
 		86EDCC1A1C93EB6600812D2B /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		86EDCC1B1C93EB6600812D2B /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		86EDCC391C93F09F00812D2B /* Double_Left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Double_Left.png; sourceTree = "<group>"; };
@@ -277,9 +279,9 @@
 				8629B02A1C95F0F600463DE6 /* partly-cloudy-day_bg.jpg */,
 				86EDCC181C93EB6600812D2B /* partly-cloudy-night.png */,
 				8629B02E1C95F1AE00463DE6 /* partly-cloudy-night_bg.jpg */,
-				86EDCC191C93EB6600812D2B /* CROPPED-2015-05-21 18.17.50_副本.jpg */,
 				86EDCC1A1C93EB6600812D2B /* bg.jpg */,
 				86EDCC1B1C93EB6600812D2B /* plus.png */,
+				86BC3C771C96A85900A91FE5 /* loading2.gif */,
 			);
 			name = img;
 			sourceTree = "<group>";
@@ -319,6 +321,7 @@
 				8629B0491C96332E00463DE6 /* DetailViewController.swift */,
 				8629B04B1C96414500463DE6 /* DetailTableViewController.swift */,
 				8629B04D1C965EAE00463DE6 /* SearchViewController.swift */,
+				86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */,
 				86F76BAD1C93BC9E00ACBCDB /* Main.storyboard */,
 				86F76BB31C93BC9E00ACBCDB /* Assets.xcassets */,
 				86F76BB51C93BC9F00ACBCDB /* LaunchScreen.storyboard */,
@@ -484,6 +487,7 @@
 				8629B0231C954F7400463DE6 /* CircumpolarStarTrails.jpg in Resources */,
 				86EDCC331C93EB6600812D2B /* partly-cloudy-night.png in Resources */,
 				86EDCC281C93EB6600812D2B /* facebook-256.png in Resources */,
+				86BC3C781C96A85900A91FE5 /* loading2.gif in Resources */,
 				86EDCC1E1C93EB6600812D2B /* refresh-1.gif in Resources */,
 				86EDCC1C1C93EB6600812D2B /* Weather_background.gif in Resources */,
 				86EDCC351C93EB6600812D2B /* bg.jpg in Resources */,
@@ -498,7 +502,6 @@
 				8629B01F1C954E7E00463DE6 /* star_art_sky_night_people_silhouette_98142_3840x2400.jpg in Resources */,
 				86EDCC3C1C93F0EF00812D2B /* Double_Right.png in Resources */,
 				86F76BAF1C93BC9E00ACBCDB /* Main.storyboard in Resources */,
-				86EDCC341C93EB6600812D2B /* CROPPED-2015-05-21 18.17.50_副本.jpg in Resources */,
 				86EDCC221C93EB6600812D2B /* refresh-5.gif in Resources */,
 				8629B0331C95F24700463DE6 /* fog_bg.jpg in Resources */,
 				86EDCC1F1C93EB6600812D2B /* refresh-2.gif in Resources */,
@@ -582,6 +585,7 @@
 				8629B0431C960D6400463DE6 /* Next7DaysCollectionViewCell.swift in Sources */,
 				86EDCBFF1C93EA8E00812D2B /* DataStruct.swift in Sources */,
 				86F76BB21C93BC9E00ACBCDB /* Weather_App.xcdatamodeld in Sources */,
+				86BC3C761C968AA800A91FE5 /* HistoryViewController.swift in Sources */,
 				8629B0471C961B7800463DE6 /* Next24HoursViewController.swift in Sources */,
 				8629B0271C955B2300463DE6 /* Next24HoursTableViewCell.swift in Sources */,
 				86F76BAC1C93BC9E00ACBCDB /* WelcomeViewController.swift in Sources */,
@@ -730,6 +734,7 @@
 			baseConfigurationReference = 3636129D455FE0DB7563B751 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -747,6 +752,7 @@
 			baseConfigurationReference = 5DD3844C8BDCF50C25BE2C91 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

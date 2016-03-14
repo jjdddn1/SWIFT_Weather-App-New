@@ -16,6 +16,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherAppLabel: UILabel!
     @IBOutlet weak var backGroundImageView: UIImageView!
     
+    @IBOutlet weak var currentLocationButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var upButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
@@ -54,10 +55,12 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     
     var distance : CGFloat = 0.0
     
+    @IBOutlet weak var spinerImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        backGroundImageView.image = UIImage(named:"4244272-night.jpg")
+        spinerImageView.image = UIImage.gifWithName("loading2")
 
+        self.view.userInteractionEnabled = false
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -69,6 +72,14 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.distance = self.weatherAppLabel.center.y -  self.upButton.center.y - 60
     }
     
     func setUpUI(){
@@ -96,6 +107,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         self.ThirdTempLabel.alpha = 0
         self.FourthTempLabel.alpha = 0
         self.FifthTempLabel.alpha = 0
+        self.currentLocationButton.alpha = 0
     }
     
     func arrowAnimationStart(){
@@ -145,6 +157,9 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getJSON(){
+        self.view.userInteractionEnabled = false
+        self.spinerImageView.hidden = false
+        
         let urlStringBase = "http://huiyuanr-env.elasticbeanstalk.com/?"
         let urlStringArg = "latitude=\(DataStruct.latitude)&longtitude=\(DataStruct.longitude)&degree=" + (DataStruct.fahrenheit == true ? "fahrenheit" : "si")
         let url = NSURL(string: urlStringBase + urlStringArg.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)
@@ -162,6 +177,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
                 print("Request JSON Failure")
                 break
             }
+            self.spinerImageView.hidden = true
             
         }
     }
@@ -169,8 +185,9 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     func showWeatherAnimation(){
         setWeatherInfo()
         UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-             self.distance = self.weatherAppLabel.center.y -  self.upButton.center.y - 60
+            
             self.weatherAppLabel.transform = CGAffineTransformMakeTranslation(0, -self.distance)
+            self.currentLocationButton.alpha = 1
             }) { (Bool) -> Void in
                 UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                     self.currentWeatherImageView.alpha = 1
@@ -201,7 +218,9 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
                             self.ThirdTempLabel.alpha = 1
                             self.FourthTempLabel.alpha = 1
                             self.FifthTempLabel.alpha = 1
+                            
                         })
+                        self.view.userInteractionEnabled = true
                         self.arrowAnimation = true
                         self.arrowAnimationStart()
                 }
@@ -265,6 +284,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.ThirdTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.FourthTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.FifthTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
+            self.currentLocationButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             }, completion: nil)
 
     }
@@ -295,6 +315,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.ThirdTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.FourthTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.FifthTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
+            self.currentLocationButton.transform = CGAffineTransformMakeTranslation(0,0)
             
             }){(Bool) -> Void in
                 self.arrowAnimation = true
@@ -323,6 +344,10 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         moveEveryThing(0, y: 1)
     }
 
+    @IBAction func getCurrentLocationWeather(sender: UIButton) {
+        self.haveCurrentLocation = false
+        self.locationManager.startUpdatingLocation()
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "swipeUpSegue" {
             let des = segue.destinationViewController as! TodayTableViewController

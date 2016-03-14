@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import CoreData
 
 class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
@@ -165,6 +165,9 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBAction func swipeUp(sender: UISwipeGestureRecognizer) {
         viewDisappear()
     }
+    @IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
+        historyButtonPressed(UIButton())
+    }
     func viewDisappear(){
         UIView.animateWithDuration(0.8, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             self.view.transform = CGAffineTransformMakeTranslation(0, -self.view.bounds.height)
@@ -251,6 +254,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func getJson(url : NSURL){
+        disableSearchKey()
         Alamofire.request(.GET, url).validate().responseJSON { response in
             switch response.result {
             case .Success:
@@ -258,10 +262,15 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     let json = JSON(value)
                     if(json["currently"]["temperature"] != nil){
                         DataStruct.jsonfile = json
-                        self.swipeUp(UISwipeGestureRecognizer())
+                        DataStruct.street = self.street.text!
                         DataStruct.city = self.city.text!
                         DataStruct.state = (self.selectState.currentTitle! as NSString).substringFromIndex(2)
+                        
+                        self.saveData()
+                        self.swipeUp(UISwipeGestureRecognizer())
+
                         self.beforeViewController.setWeatherInfo()
+                        
                         print("success")
                     }else{
                         self.setError = "Invalid Location Information"
@@ -272,8 +281,27 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 print("Get JSON Failure")
                 break
             }
+            self.enableSearchKey()
         }
 
+    }
+    
+    func saveData(){
+        //store the history in coreData
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let entity = NSEntityDescription.entityForName("History", inManagedObjectContext: managedContext)
+        
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        item.setValue(DataStruct.city, forKey: "city")
+        item.setValue(DataStruct.state, forKey: "state")
+        item.setValue(DataStruct.street, forKey: "street")
+        do{
+            try managedContext.save()
+            
+        }catch{
+            print("Error")
+        }
     }
     
     func createUrl( streetV : String , cityV : String , stateV : String , fahrenheitV: Bool) -> String {
@@ -295,6 +323,16 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.view.endEditing(true)
         
     }
+    @IBAction func historyButtonPressed(sender: UIButton) {
+        self.performSegueWithIdentifier("showHistorySegue", sender: self)
+        UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            self.view.transform = CGAffineTransformMakeTranslation(-self.view.bounds.width, 0)
+            self.beforeViewController.backGroundImageView.transform = CGAffineTransformTranslate(self.beforeViewController.backGroundImageView.transform, -self.view.bounds.width, 0)
+            }) { (Bool) -> Void in
+                
+        }
+        
+    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if(DataStruct.needCheck){
@@ -304,5 +342,30 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         searchClearMoveUp()
     }
 
+    func everythingGetBackToOriginPosition(){
+        UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            self.view.transform = CGAffineTransformMakeTranslation(0, 0)
+            self.beforeViewController.backGroundImageView.transform = CGAffineTransformTranslate(self.beforeViewController.backGroundImageView.transform, self.view.bounds.width, 0)
+            }) { (Bool) -> Void in
+                
+        }
+
+    }
+    
+    func enableSearchKey(){
+        self.search.enabled = true
+        self.search.backgroundColor = UIColor(red: 128/255, green: 0, blue: 1, alpha: 1)
+    }
+    func disableSearchKey(){
+        self.search.enabled = false
+        self.search.backgroundColor = UIColor.grayColor()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showHistorySegue" {
+            let des = segue.destinationViewController as! HistoryViewController
+            des.beforeViewController = self
+        }
+    }
 
 }
