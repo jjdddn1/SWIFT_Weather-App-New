@@ -9,6 +9,7 @@ If you happend to try out this app and found bugs or had any advise, **PLEASE** 
 > The pics maybe outdated cuz I kept updating the app (but too lazy to update the pics 😄)
 
 ![image](https://github.com/jjdddn1/SWIFT_Weather-App-New/blob/master/screenshot/5.png?raw=false)
+
 You can check the gif [here](http://huiyuanr.portfoliobox.net/weatherapp)
 
 
@@ -36,7 +37,7 @@ Search "Huiyuan Ren" in App Store and find the "Swift Weather"
 OR
 
 ```
-https://itunes.apple.com/us/app/swift-weather-app-help-you/id1093067051?l=zh&ls=1&mt=8
+[App Store](https://itunes.apple.com/us/app/swift-weather-app-help-you/id1093067051?l=zh&ls=1&mt=8)
 ```
 
 ## Update
