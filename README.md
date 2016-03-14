@@ -8,11 +8,8 @@ If you happend to try out this app and found bugs or had any advise, **PLEASE** 
 ## Screenshot
 > The pics maybe outdated cuz I kept updating the app (but too lazy to update the pics 😄)
 
-![image](https://github.com/jjdddn1/SWIFT_Weather-App-New/blob/master/screenshot/0.png?raw=false)
-![image](https://github.com/jjdddn1/SWIFT_Weather-App-New/blob/master/screenshot/1.png?raw=false)
-![image](https://github.com/jjdddn1/SWIFT_Weather-App-New/blob/master/screenshot/2.png?raw=false)
-![image](https://github.com/jjdddn1/SWIFT_Weather-App-New/blob/master/screenshot/3.png?raw=false)
-![image](https://github.com/jjdddn1/SWIFT_Weather-App-New/blob/master/screenshot/4.png?raw=false)
+![image](https://github.com/jjdddn1/SWIFT_Weather-App-New/blob/master/screenshot/5.png?raw=false)
+
 
 ## Features
 
