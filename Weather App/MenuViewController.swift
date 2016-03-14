@@ -20,6 +20,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var offsetX : CGFloat = 0
     var offsetY : CGFloat = 0
     var touchInSide = false
+    var tableViewOriginFrame : CGRect!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewDidAppear(animated: Bool) {
+        tableViewOriginFrame = tableView.frame
         UIView.animateWithDuration(0.5) { () -> Void in
             self.tableView.transform = CGAffineTransformMakeTranslation(0, 0)
             self.beforeViewController.view.transform = CGAffineTransformMakeTranslation(self.tableView.frame.width / 2 , 0)
@@ -50,14 +52,16 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCellWithIdentifier("menuCell", forIndexPath: indexPath)
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = DataStruct.fahrenheit ? "Unit: Ui" : "Unit: Si"
+            cell.textLabel?.text = DataStruct.fahrenheit ? "Unit: Fahrenheit" : "Unit: Celsius"
             break
         case 1:
             cell.textLabel?.text = "Send Feedback"
             break
         case 2:
-            cell.textLabel?.text = "Share (Developing)"
+            cell.textLabel?.text = "Share"
             break
+        case 3:
+            cell.textLabel?.text = "Rate me in App Store"
         default:
             break
         }
@@ -70,10 +74,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.cellForRowAtIndexPath(indexPath)
             if(DataStruct.fahrenheit){
                 DataStruct.fahrenheit = !DataStruct.fahrenheit
-                cell?.textLabel?.text = "Unit: Si"
+                cell?.textLabel?.text = "Unit: Celsius"
             }else{
                 DataStruct.fahrenheit = !DataStruct.fahrenheit
-                cell?.textLabel?.text = "Unit: Ui"
+                cell?.textLabel?.text = "Unit: Fahrenheit"
             }
             beforeViewController.getCurrentLocationWeather(UIButton())
             break
@@ -81,6 +85,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             sendFeedback()
             break
         case 2:
+            enlargeMenu()
+            break
+        case 3:
+            if let requestUrl = NSURL(string: "https://itunes.apple.com/us/app/swift-weather-app-help-you/id1093067051?l=zh&ls=1&mt=8") {
+                UIApplication.sharedApplication().openURL(requestUrl)
+            }
             break
         default:
             break
@@ -108,7 +118,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 4
     }
 
 
@@ -150,6 +160,23 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    func enlargeMenu(){
+        self.view.userInteractionEnabled = false
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.tableView.frame = self.view.frame
+            DataStruct.enterShare = true
+            }) { (Bool) -> Void in
+                self.performSegueWithIdentifier("shareSegue", sender: self)
+                self.view.userInteractionEnabled = true
+        }
+    }
+    func shrinkMenu(){
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.tableView.frame = self.tableViewOriginFrame
+            }) { (Bool) -> Void in
+        }
+    }
+    
     
     func CancelButtonPressed(sender: UIButton) {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
@@ -163,66 +190,71 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let touch : UITouch! = touches.first
-        originLocation = touch.locationInView(self.view)
-        touchInSide = true
-        
+        if !DataStruct.enterShare {
+            let touch : UITouch! = touches.first
+            originLocation = touch.locationInView(self.view)
+            touchInSide = true
+        }
         
         
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        let touch : UITouch! = touches.first
-        self.location = touch.locationInView(self.view)
-        offsetX = location.x - originLocation.x
-        offsetY = location.y - originLocation.y
-        if abs(offsetX) > 10 || abs(offsetY) > 10 {
-            touchInSide = false
+        if !DataStruct.enterShare{
+            let touch : UITouch! = touches.first
+            self.location = touch.locationInView(self.view)
+            offsetX = location.x - originLocation.x
+            offsetY = location.y - originLocation.y
+            if abs(offsetX) > 10 || abs(offsetY) > 10 {
+                touchInSide = false
+            }
+            
+            if offsetX > 0 {
+                offsetX = 0
+            }
+            self.tableView.transform = CGAffineTransformMakeTranslation(offsetX, 0)
+            self.beforeViewController.view.transform = CGAffineTransformMakeTranslation(self.tableView.frame.width / 2 + offsetX / 2 , 0)
+            self.view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3 + offsetX / self.tableView.frame.width * 0.3 ).CGColor
+            
         }
-        
-        if offsetX > 0 {
-            offsetX = 0
-        }
-        self.tableView.transform = CGAffineTransformMakeTranslation(offsetX, 0)
-        self.beforeViewController.view.transform = CGAffineTransformMakeTranslation(self.tableView.frame.width / 2 + offsetX / 2 , 0)
-        self.view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3 + offsetX / self.tableView.frame.width * 0.3 ).CGColor
-        
-        
         //            print(location.x + offsetX)
         
     }
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let maxOffset = self.tableView.frame.width / 4
-        if(offsetX > -maxOffset && touchInSide == false){
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
-                self.tableView.transform = CGAffineTransformMakeTranslation(0, 0)
-                self.beforeViewController.view.transform = CGAffineTransformMakeTranslation(self.tableView.frame.width / 2 , 0)
-                self.view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
-                }) { (Bool) -> Void in
-            }
-        }else if (touchInSide == true){
-            CancelButtonPressed(UIButton())
-        }else{
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
-                self.tableView.transform = CGAffineTransformMakeTranslation(-self.tableView.frame.width, 0)
-                self.beforeViewController.view.transform = CGAffineTransformMakeTranslation(0 , 0)
-                self.view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0).CGColor
-                
-                }) { (Bool) -> Void in
-                    self.dismissViewControllerAnimated(false, completion: nil)
+        if !DataStruct.enterShare{
+            let maxOffset = self.tableView.frame.width / 4
+            if(offsetX > -maxOffset && touchInSide == false){
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    self.tableView.transform = CGAffineTransformMakeTranslation(0, 0)
+                    self.beforeViewController.view.transform = CGAffineTransformMakeTranslation(self.tableView.frame.width / 2 , 0)
+                    self.view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
+                    }) { (Bool) -> Void in
+                }
+            }else if (touchInSide == true){
+                CancelButtonPressed(UIButton())
+            }else{
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.tableView.transform = CGAffineTransformMakeTranslation(-self.tableView.frame.width, 0)
+                    self.beforeViewController.view.transform = CGAffineTransformMakeTranslation(0 , 0)
+                    self.view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0).CGColor
+                    
+                    }) { (Bool) -> Void in
+                        self.dismissViewControllerAnimated(false, completion: nil)
+                }
             }
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "shareSegue"{
+            let des = segue.destinationViewController as! ShareViewController
+            des.beforeViewController = self
+        }
     }
-    */
+
 
 }

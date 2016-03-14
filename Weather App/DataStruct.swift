@@ -34,6 +34,8 @@ struct DataStruct {
         }
     }
     
+    static var enterShare = false
+    
     static var latitude = 0.00
     static var longitude = 0.00
     static var street = ""
