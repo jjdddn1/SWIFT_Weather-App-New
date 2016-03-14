@@ -31,14 +31,20 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var FirstDayLabel: UILabel!
     @IBOutlet weak var SecondDayLabel: UILabel!
     @IBOutlet weak var ThirdDayLabel: UILabel!
+    @IBOutlet weak var FourthDayLabel: UILabel!
+    @IBOutlet weak var FifthDayLabel: UILabel!
     
     @IBOutlet weak var FirstIconImageView: UIImageView!
     @IBOutlet weak var SecondIconImageView: UIImageView!
     @IBOutlet weak var ThirdIconImageView: UIImageView!
+    @IBOutlet weak var FourthIconImageView: UIImageView!
+    @IBOutlet weak var FifthIconImageView: UIImageView!
     
     @IBOutlet weak var FirstTempLabel: UILabel!
     @IBOutlet weak var SecondTempLabel: UILabel!
     @IBOutlet weak var ThirdTempLabel: UILabel!
+    @IBOutlet weak var FourthTempLabel: UILabel!
+    @IBOutlet weak var FifthTempLabel: UILabel!
     
     var haveCurrentLocation = false
     let locationManager = CLLocationManager()
@@ -78,12 +84,18 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         self.FirstDayLabel.alpha = 0
         self.SecondDayLabel.alpha = 0
         self.ThirdDayLabel.alpha = 0
+        self.FourthDayLabel.alpha = 0
+        self.FifthDayLabel.alpha = 0
         self.FirstIconImageView.alpha = 0
         self.SecondIconImageView.alpha = 0
         self.ThirdIconImageView.alpha = 0
+        self.FourthIconImageView.alpha = 0
+        self.FifthIconImageView.alpha = 0
         self.FirstTempLabel.alpha = 0
         self.SecondTempLabel.alpha = 0
         self.ThirdTempLabel.alpha = 0
+        self.FourthTempLabel.alpha = 0
+        self.FifthTempLabel.alpha = 0
     }
     
     func arrowAnimationStart(){
@@ -134,7 +146,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func getJSON(){
         let urlStringBase = "http://huiyuanr-env.elasticbeanstalk.com/?"
-        let urlStringArg = "latitude=\(DataStruct.latitude)&longtitude=\(DataStruct.longitude)&degree=" + (DataStruct.fahrenheit == true ? "ui" : "si")
+        let urlStringArg = "latitude=\(DataStruct.latitude)&longtitude=\(DataStruct.longitude)&degree=" + (DataStruct.fahrenheit == true ? "fahrenheit" : "si")
         let url = NSURL(string: urlStringBase + urlStringArg.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)
         print("URL:" , url)
         print("Start Requesting JSON")
@@ -157,7 +169,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     func showWeatherAnimation(){
         setWeatherInfo()
         UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-             self.distance = self.weatherAppLabel.center.y -  self.upButton.center.y - 70
+             self.distance = self.weatherAppLabel.center.y -  self.upButton.center.y - 60
             self.weatherAppLabel.transform = CGAffineTransformMakeTranslation(0, -self.distance)
             }) { (Bool) -> Void in
                 UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
@@ -177,12 +189,18 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
                             self.FirstDayLabel.alpha = 1
                             self.SecondDayLabel.alpha = 1
                             self.ThirdDayLabel.alpha = 1
+                            self.FourthDayLabel.alpha = 1
+                            self.FifthDayLabel.alpha = 1
                             self.FirstIconImageView.alpha = 1
                             self.SecondIconImageView.alpha = 1
                             self.ThirdIconImageView.alpha = 1
+                            self.FourthIconImageView.alpha = 1
+                            self.FifthIconImageView.alpha = 1
                             self.FirstTempLabel.alpha = 1
                             self.SecondTempLabel.alpha = 1
                             self.ThirdTempLabel.alpha = 1
+                            self.FourthTempLabel.alpha = 1
+                            self.FifthTempLabel.alpha = 1
                         })
                         self.arrowAnimation = true
                         self.arrowAnimationStart()
@@ -201,17 +219,25 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         let firstDay = (DataStruct.jsonfile["daily"]["data"][1]["time"] != nil) ? (DataStruct.jsonfile["daily"]["data"][1]["time"].string!.characters.split{$0 == " "}.map(String.init)[0]) : DataStruct.errorString
         let secondDay = (DataStruct.jsonfile["daily"]["data"][2]["time"] != nil) ? (DataStruct.jsonfile["daily"]["data"][2]["time"].string!.characters.split{$0 == " "}.map(String.init)[0]) : DataStruct.errorString
         let thirdDay = (DataStruct.jsonfile["daily"]["data"][3]["time"] != nil) ? (DataStruct.jsonfile["daily"]["data"][3]["time"].string!.characters.split{$0 == " "}.map(String.init)[0]) : DataStruct.errorString
+        let fourthDay = (DataStruct.jsonfile["daily"]["data"][4]["time"] != nil) ? (DataStruct.jsonfile["daily"]["data"][4]["time"].string!.characters.split{$0 == " "}.map(String.init)[0]) : DataStruct.errorString
+        let fifthDay = (DataStruct.jsonfile["daily"]["data"][5]["time"] != nil) ? (DataStruct.jsonfile["daily"]["data"][5]["time"].string!.characters.split{$0 == " "}.map(String.init)[0]) : DataStruct.errorString
         FirstDayLabel.text = firstDay
         SecondDayLabel.text = secondDay
         ThirdDayLabel.text = thirdDay
-        
+        FourthDayLabel.text = fourthDay
+        FifthDayLabel.text = fifthDay
+
         FirstIconImageView.image = UIImage(named: DataStruct.jsonfile["daily"]["data"][1]["icon"].string! ?? DataStruct.errorString)
         SecondIconImageView.image = UIImage(named: DataStruct.jsonfile["daily"]["data"][2]["icon"].string! ?? DataStruct.errorString)
         ThirdIconImageView.image = UIImage(named: DataStruct.jsonfile["daily"]["data"][3]["icon"].string! ?? DataStruct.errorString)
+        FourthIconImageView.image = UIImage(named: DataStruct.jsonfile["daily"]["data"][4]["icon"].string! ?? DataStruct.errorString)
+        FifthIconImageView.image = UIImage(named: DataStruct.jsonfile["daily"]["data"][5]["icon"].string! ?? DataStruct.errorString)
         
         FirstTempLabel.text = "L: " + "\(DataStruct.jsonfile["daily"]["data"][1]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][1]["temperatureMin"].int! : DataStruct.errorInt)" + "° | H: " + "\(DataStruct.jsonfile["daily"]["data"][1]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][1]["temperatureMax"].int! : DataStruct.errorInt)" + "°"
         SecondTempLabel.text = "L: " + "\(DataStruct.jsonfile["daily"]["data"][2]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][2]["temperatureMin"].int! : DataStruct.errorInt)" + "° | H: " + "\(DataStruct.jsonfile["daily"]["data"][2]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][2]["temperatureMax"].int! : DataStruct.errorInt)" + "°"
         ThirdTempLabel.text = "L: " + "\(DataStruct.jsonfile["daily"]["data"][3]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][3]["temperatureMin"].int! : DataStruct.errorInt)" + "° | H: " + "\(DataStruct.jsonfile["daily"]["data"][3]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][3]["temperatureMax"].int! : DataStruct.errorInt)" + "°"
+        FourthTempLabel.text = "L: " + "\(DataStruct.jsonfile["daily"]["data"][4]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][4]["temperatureMin"].int! : DataStruct.errorInt)" + "° | H: " + "\(DataStruct.jsonfile["daily"]["data"][4]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][4]["temperatureMax"].int! : DataStruct.errorInt)" + "°"
+        FifthTempLabel.text = "L: " + "\(DataStruct.jsonfile["daily"]["data"][5]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][5]["temperatureMin"].int! : DataStruct.errorInt)" + "° | H: " + "\(DataStruct.jsonfile["daily"]["data"][5]["temperatureMin"] != nil ? DataStruct.jsonfile["daily"]["data"][5]["temperatureMax"].int! : DataStruct.errorInt)" + "°"
     }
     
     func moveEveryThing(x: CGFloat, y :CGFloat){
@@ -227,13 +253,18 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.FirstDayLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.SecondDayLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.ThirdDayLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
+            self.FourthDayLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
+            self.FifthDayLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.FirstIconImageView.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.SecondIconImageView.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.ThirdIconImageView.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
+            self.FourthIconImageView.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
+            self.FifthIconImageView.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.FirstTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.SecondTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.ThirdTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
-            
+            self.FourthTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
+            self.FifthTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             }, completion: nil)
 
     }
@@ -252,12 +283,18 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.FirstDayLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.SecondDayLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.ThirdDayLabel.transform = CGAffineTransformMakeTranslation(0,0)
+            self.FourthDayLabel.transform = CGAffineTransformMakeTranslation(0,0)
+            self.FifthDayLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.FirstIconImageView.transform = CGAffineTransformMakeTranslation(0,0)
             self.SecondIconImageView.transform = CGAffineTransformMakeTranslation(0,0)
             self.ThirdIconImageView.transform = CGAffineTransformMakeTranslation(0,0)
+            self.FourthIconImageView.transform = CGAffineTransformMakeTranslation(0,0)
+            self.FifthIconImageView.transform = CGAffineTransformMakeTranslation(0,0)
             self.FirstTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.SecondTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.ThirdTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
+            self.FourthTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
+            self.FifthTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
             
             }){(Bool) -> Void in
                 self.arrowAnimation = true
@@ -272,35 +309,38 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
         self.performSegueWithIdentifier("swipeRightSegue", sender: self)
-
         moveEveryThing(1, y: 0 )
 
     }
     
     @IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
-        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            self.backGroundImageView.transform = CGAffineTransformMakeTranslation(-self.view.bounds.width, 0)
-            }, completion: nil)
+        self.performSegueWithIdentifier("swipeLeftSegue", sender: self)
+        moveEveryThing(-1, y: 0 )
     }
     
     @IBAction func swipeDown(sender: UISwipeGestureRecognizer) {
-        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            self.backGroundImageView.transform = CGAffineTransformMakeTranslation(0, self.view.bounds.height)
-            }, completion: nil)
+        self.performSegueWithIdentifier("swipeDownSegue", sender: self)
+        moveEveryThing(0, y: 1)
     }
-    
 
-    
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "swipeUpSegue" {
             let des = segue.destinationViewController as! TodayTableViewController
             des.beforeViewController = self
         }
         if segue.identifier == "swipeRightSegue"{
-            let des = segue.destinationViewController as! Next24HoursTableViewController
+            let des = segue.destinationViewController as! Next24HoursViewController
             des.beforeViewController = self
         }
+        if segue.identifier == "swipeLeftSegue"{
+            let des = segue.destinationViewController as! Next7DaysViewController
+            des.beforeViewController = self
+        }
+        if segue.identifier == "swipeDownSegue"{
+            let des = segue.destinationViewController as! SearchViewController
+            des.beforeViewController = self
+        }
+        
     }
     
 }

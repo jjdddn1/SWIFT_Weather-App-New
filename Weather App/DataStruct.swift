@@ -14,7 +14,7 @@ struct DataStruct {
     
     static var jsonfile: JSON!
     static var hasError = false
-    
+    static var dayNum = 1
     static var errorInt : Int {
         get{
             DataStruct.hasError = true
