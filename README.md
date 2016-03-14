@@ -37,7 +37,7 @@ Search "Huiyuan Ren" in App Store and find the "Swift Weather"
 OR
 
 ```
-[App Store](https://itunes.apple.com/us/app/swift-weather-app-help-you/id1093067051?l=zh&ls=1&mt=8)
+![App Store](https://itunes.apple.com/us/app/swift-weather-app-help-you/id1093067051?l=zh&ls=1&mt=8)
 ```
 
 ## Update
