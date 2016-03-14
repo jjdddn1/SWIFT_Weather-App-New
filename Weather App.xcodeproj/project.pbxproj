@@ -14,7 +14,6 @@
 		8629B0211C954EF100463DE6 /* papersco-mc56-wallpaper-galaxy-blue-7-starry-star-sky-8-wallpaper_fbb0d256b13596f1e84d2225e463e082_raw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8629B0201C954EF100463DE6 /* papersco-mc56-wallpaper-galaxy-blue-7-starry-star-sky-8-wallpaper_fbb0d256b13596f1e84d2225e463e082_raw.jpg */; };
 		8629B0231C954F7400463DE6 /* CircumpolarStarTrails.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8629B0221C954F7400463DE6 /* CircumpolarStarTrails.jpg */; };
 		8629B0271C955B2300463DE6 /* Next24HoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B0261C955B2300463DE6 /* Next24HoursTableViewCell.swift */; };
-		8629B02B1C95F0F600463DE6 /* partly-cloudy-day_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8629B02A1C95F0F600463DE6 /* partly-cloudy-day_bg.jpg */; };
 		8629B02D1C95F14E00463DE6 /* rain_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8629B02C1C95F14E00463DE6 /* rain_bg.jpg */; };
 		8629B02F1C95F1AE00463DE6 /* partly-cloudy-night_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8629B02E1C95F1AE00463DE6 /* partly-cloudy-night_bg.jpg */; };
 		8629B0311C95F20500463DE6 /* cloudy_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8629B0301C95F20500463DE6 /* cloudy_bg.jpg */; };
@@ -32,6 +31,8 @@
 		8629B04E1C965EAE00463DE6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B04D1C965EAE00463DE6 /* SearchViewController.swift */; };
 		86BC3C761C968AA800A91FE5 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */; };
 		86BC3C781C96A85900A91FE5 /* loading2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 86BC3C771C96A85900A91FE5 /* loading2.gif */; };
+		86BC3C7E1C96ADED00A91FE5 /* partly-cloudy-day_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 86BC3C7D1C96ADED00A91FE5 /* partly-cloudy-day_bg.jpg */; };
+		86BC3C801C96AE8100A91FE5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BC3C7F1C96AE8100A91FE5 /* MenuViewController.swift */; };
 		86EDCBF81C93EA1D00812D2B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EDCBF51C93EA1D00812D2B /* Alamofire.framework */; };
 		86EDCBF91C93EA1D00812D2B /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EDCBF61C93EA1D00812D2B /* Spring.framework */; };
 		86EDCBFA1C93EA1D00812D2B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EDCBF71C93EA1D00812D2B /* SwiftyJSON.framework */; };
@@ -106,7 +107,6 @@
 		8629B0201C954EF100463DE6 /* papersco-mc56-wallpaper-galaxy-blue-7-starry-star-sky-8-wallpaper_fbb0d256b13596f1e84d2225e463e082_raw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "papersco-mc56-wallpaper-galaxy-blue-7-starry-star-sky-8-wallpaper_fbb0d256b13596f1e84d2225e463e082_raw.jpg"; sourceTree = "<group>"; };
 		8629B0221C954F7400463DE6 /* CircumpolarStarTrails.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CircumpolarStarTrails.jpg; sourceTree = "<group>"; };
 		8629B0261C955B2300463DE6 /* Next24HoursTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Next24HoursTableViewCell.swift; sourceTree = "<group>"; };
-		8629B02A1C95F0F600463DE6 /* partly-cloudy-day_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "partly-cloudy-day_bg.jpg"; sourceTree = "<group>"; };
 		8629B02C1C95F14E00463DE6 /* rain_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain_bg.jpg; sourceTree = "<group>"; };
 		8629B02E1C95F1AE00463DE6 /* partly-cloudy-night_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "partly-cloudy-night_bg.jpg"; sourceTree = "<group>"; };
 		8629B0301C95F20500463DE6 /* cloudy_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cloudy_bg.jpg; sourceTree = "<group>"; };
@@ -124,6 +124,8 @@
 		8629B04D1C965EAE00463DE6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		86BC3C771C96A85900A91FE5 /* loading2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading2.gif; sourceTree = "<group>"; };
+		86BC3C7D1C96ADED00A91FE5 /* partly-cloudy-day_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "partly-cloudy-day_bg.jpg"; sourceTree = "<group>"; };
+		86BC3C7F1C96AE8100A91FE5 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		86EDCBF51C93EA1D00812D2B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		86EDCBF61C93EA1D00812D2B /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = "Pods/../build/Debug-iphoneos/Spring.framework"; sourceTree = "<group>"; };
 		86EDCBF71C93EA1D00812D2B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -276,7 +278,7 @@
 				86EDCC161C93EB6600812D2B /* cloudy.png */,
 				8629B0301C95F20500463DE6 /* cloudy_bg.jpg */,
 				86EDCC171C93EB6600812D2B /* partly-cloudy-day.png */,
-				8629B02A1C95F0F600463DE6 /* partly-cloudy-day_bg.jpg */,
+				86BC3C7D1C96ADED00A91FE5 /* partly-cloudy-day_bg.jpg */,
 				86EDCC181C93EB6600812D2B /* partly-cloudy-night.png */,
 				8629B02E1C95F1AE00463DE6 /* partly-cloudy-night_bg.jpg */,
 				86EDCC1A1C93EB6600812D2B /* bg.jpg */,
@@ -322,6 +324,7 @@
 				8629B04B1C96414500463DE6 /* DetailTableViewController.swift */,
 				8629B04D1C965EAE00463DE6 /* SearchViewController.swift */,
 				86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */,
+				86BC3C7F1C96AE8100A91FE5 /* MenuViewController.swift */,
 				86F76BAD1C93BC9E00ACBCDB /* Main.storyboard */,
 				86F76BB31C93BC9E00ACBCDB /* Assets.xcassets */,
 				86F76BB51C93BC9F00ACBCDB /* LaunchScreen.storyboard */,
@@ -465,10 +468,10 @@
 				86EDCC2D1C93EB6600812D2B /* rain.png in Resources */,
 				8629B0371C95F35B00463DE6 /* sleet_bg.jpg in Resources */,
 				86F76BB71C93BC9F00ACBCDB /* LaunchScreen.storyboard in Resources */,
-				8629B02B1C95F0F600463DE6 /* partly-cloudy-day_bg.jpg in Resources */,
 				86EDCC261C93EB6600812D2B /* authentic-03.png in Resources */,
 				86EDCC2E1C93EB6600812D2B /* sleet.png in Resources */,
 				86EDCC301C93EB6600812D2B /* fog.png in Resources */,
+				86BC3C7E1C96ADED00A91FE5 /* partly-cloudy-day_bg.jpg in Resources */,
 				8629B02F1C95F1AE00463DE6 /* partly-cloudy-night_bg.jpg in Resources */,
 				86EDCC401C93F11700812D2B /* Double_Up.png in Resources */,
 				86EDCC291C93EB6600812D2B /* forecast_logo.png in Resources */,
@@ -581,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8629B04C1C96414500463DE6 /* DetailTableViewController.swift in Sources */,
+				86BC3C801C96AE8100A91FE5 /* MenuViewController.swift in Sources */,
 				8629B04A1C96332E00463DE6 /* DetailViewController.swift in Sources */,
 				8629B0431C960D6400463DE6 /* Next7DaysCollectionViewCell.swift in Sources */,
 				86EDCBFF1C93EA8E00812D2B /* DataStruct.swift in Sources */,
@@ -741,8 +745,9 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Weather App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Ren.Weather-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huiyuanr.WeatherAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -759,8 +764,9 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Weather App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Ren.Weather-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huiyuanr.WeatherAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

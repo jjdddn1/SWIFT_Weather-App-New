@@ -16,6 +16,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherAppLabel: UILabel!
     @IBOutlet weak var backGroundImageView: UIImageView!
     
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var upButton: UIButton!
@@ -108,6 +109,8 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         self.FourthTempLabel.alpha = 0
         self.FifthTempLabel.alpha = 0
         self.currentLocationButton.alpha = 0
+        self.menuButton.alpha = 0
+
     }
     
     func arrowAnimationStart(){
@@ -188,6 +191,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             
             self.weatherAppLabel.transform = CGAffineTransformMakeTranslation(0, -self.distance)
             self.currentLocationButton.alpha = 1
+            self.menuButton.alpha = 1
             }) { (Bool) -> Void in
                 UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                     self.currentWeatherImageView.alpha = 1
@@ -285,6 +289,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.FourthTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.FifthTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.currentLocationButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
+            self.menuButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             }, completion: nil)
 
     }
@@ -316,7 +321,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.FourthTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.FifthTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.currentLocationButton.transform = CGAffineTransformMakeTranslation(0,0)
-            
+            self.menuButton.transform = CGAffineTransformMakeTranslation(0,0)
             }){(Bool) -> Void in
                 self.arrowAnimation = true
                 self.arrowAnimationStart()
@@ -348,21 +353,29 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         self.haveCurrentLocation = false
         self.locationManager.startUpdatingLocation()
     }
+    @IBAction func menuButtonPressed(sender: UIButton) {
+        performSegueWithIdentifier("showMenuSegue", sender: self)
+
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "swipeUpSegue" {
             let des = segue.destinationViewController as! TodayTableViewController
             des.beforeViewController = self
         }
-        if segue.identifier == "swipeRightSegue"{
+        else if segue.identifier == "swipeRightSegue"{
             let des = segue.destinationViewController as! Next24HoursViewController
             des.beforeViewController = self
         }
-        if segue.identifier == "swipeLeftSegue"{
+        else if segue.identifier == "swipeLeftSegue"{
             let des = segue.destinationViewController as! Next7DaysViewController
             des.beforeViewController = self
         }
-        if segue.identifier == "swipeDownSegue"{
+        else if segue.identifier == "swipeDownSegue"{
             let des = segue.destinationViewController as! SearchViewController
+            des.beforeViewController = self
+        }
+        else if segue.identifier == "showMenuSegue" {
+            let des = segue.destinationViewController as! MenuViewController
             des.beforeViewController = self
         }
         

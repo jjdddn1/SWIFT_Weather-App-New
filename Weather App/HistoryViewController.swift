@@ -171,6 +171,13 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func backButtonPressed(sender: UIButton) {
         viewDisappear()
     }
+    var firstTime = true
+    @IBAction func swipeFromLeftEdge(sender: UIScreenEdgePanGestureRecognizer) {
+        if firstTime{
+            viewDisappear()
+            firstTime = false
+        }
+    }
 //    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 //        
 //        if (self.tableView!.contentOffset.x <= -50) //x是触发操作的阀值
