@@ -26,7 +26,7 @@ You can check the gif [here](http://huiyuanr.portfoliobox.net/weatherapp)
 ```
 $ git clone https://github.com/jjdddn1/SWIFT_Weather-App-New.git
 $ cd SWIFT_Weather-App-New
-$ open "Weather App.xcodeproj"
+$ open "Weather App.xcworkspace"
 ```
 
 OR
