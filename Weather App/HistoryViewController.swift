@@ -114,8 +114,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         if(x >= 0){
-//        let fetchRequest = NSFetchRequest(entityName: "History")
-//        let entity = NSEntityDescription.entityForName("QandA", inManagedObjectContext: managedContext)
+
             let item = result.removeAtIndex(x)
             
             managedContext.deleteObject(item)

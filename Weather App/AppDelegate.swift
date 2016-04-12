@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -26,7 +27,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
+    func saveWithNSKeyedArchiver(){
+        let sharedDataAccess = DataStruct.self
+
+        /**
+         *  数据归档处理
+         */
+        let cityData = sharedDataAccess.cities
+        if cityData.count != 0 {
+            NSKeyedArchiver.archiveRootObject(cityData, toFile: Location.ArchiveURL.path!);
+        }
+        print("Saved")
+    }
+    
+    func readWithNSKeyedUnarchiver() {
+        let sharedDataAccess = DataStruct.self
+        
+        //unarchive for user favorite restaurants
+        let cityData = NSKeyedUnarchiver.unarchiveObjectWithFile(Location.ArchiveURL.path!)
+        if cityData != nil {
+            sharedDataAccess.cities = cityData as! [Location]
+        }
+    }
+    
+    
     func applicationDidEnterBackground(application: UIApplication) {
+        saveWithNSKeyedArchiver()
+
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
@@ -36,12 +63,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
+        if(DataStruct.welcomeViewController != nil){
+            DataStruct.welcomeViewController.getCurrentLocationWeather(UIButton())
+        }
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+        
         self.saveContext()
         self.saveUserInfo()
     }

@@ -29,6 +29,8 @@
 		8629B04A1C96332E00463DE6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B0491C96332E00463DE6 /* DetailViewController.swift */; };
 		8629B04C1C96414500463DE6 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B04B1C96414500463DE6 /* DetailTableViewController.swift */; };
 		8629B04E1C965EAE00463DE6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B04D1C965EAE00463DE6 /* SearchViewController.swift */; };
+		865AE5E71CBCA24F0089D394 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AE5E61CBCA24F0089D394 /* SearchHistoryViewController.swift */; };
+		865AE5E91CBD96A80089D394 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AE5E81CBD96A80089D394 /* Location.swift */; };
 		86BC3C761C968AA800A91FE5 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */; };
 		86BC3C781C96A85900A91FE5 /* loading2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 86BC3C771C96A85900A91FE5 /* loading2.gif */; };
 		86BC3C7E1C96ADED00A91FE5 /* partly-cloudy-day_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 86BC3C7D1C96ADED00A91FE5 /* partly-cloudy-day_bg.jpg */; };
@@ -124,6 +126,8 @@
 		8629B0491C96332E00463DE6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8629B04B1C96414500463DE6 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		8629B04D1C965EAE00463DE6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		865AE5E61CBCA24F0089D394 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
+		865AE5E81CBD96A80089D394 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		86BC3C771C96A85900A91FE5 /* loading2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading2.gif; sourceTree = "<group>"; };
 		86BC3C7D1C96ADED00A91FE5 /* partly-cloudy-day_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "partly-cloudy-day_bg.jpg"; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				86F76BB01C93BC9E00ACBCDB /* Weather_App.xcdatamodeld */,
+				865AE5E81CBD96A80089D394 /* Location.swift */,
 				86EDCBFE1C93EA8E00812D2B /* DataStruct.swift */,
 			);
 			name = Data;
@@ -331,6 +336,7 @@
 				86BC3C7F1C96AE8100A91FE5 /* MenuViewController.swift */,
 				86BC3C821C9728D100A91FE5 /* ShareViewController.swift */,
 				86BC3C861C9748B800A91FE5 /* AboutViewController.swift */,
+				865AE5E61CBCA24F0089D394 /* SearchHistoryViewController.swift */,
 				86F76BAD1C93BC9E00ACBCDB /* Main.storyboard */,
 				86F76BB31C93BC9E00ACBCDB /* Assets.xcassets */,
 				86F76BB51C93BC9F00ACBCDB /* LaunchScreen.storyboard */,
@@ -596,12 +602,14 @@
 				86EDCBFF1C93EA8E00812D2B /* DataStruct.swift in Sources */,
 				86F76BB21C93BC9E00ACBCDB /* Weather_App.xcdatamodeld in Sources */,
 				86BC3C831C9728D100A91FE5 /* ShareViewController.swift in Sources */,
+				865AE5E71CBCA24F0089D394 /* SearchHistoryViewController.swift in Sources */,
 				86BC3C761C968AA800A91FE5 /* HistoryViewController.swift in Sources */,
 				8629B0471C961B7800463DE6 /* Next24HoursViewController.swift in Sources */,
 				86BC3C871C9748B800A91FE5 /* AboutViewController.swift in Sources */,
 				8629B0271C955B2300463DE6 /* Next24HoursTableViewCell.swift in Sources */,
 				86F76BAC1C93BC9E00ACBCDB /* WelcomeViewController.swift in Sources */,
 				8629B04E1C965EAE00463DE6 /* SearchViewController.swift in Sources */,
+				865AE5E91CBD96A80089D394 /* Location.swift in Sources */,
 				8629B0451C9616FC00463DE6 /* Next7DaysViewController.swift in Sources */,
 				86EDCBFC1C93EA7100812D2B /* UIImage+Gif.swift in Sources */,
 				86F76BAA1C93BC9E00ACBCDB /* AppDelegate.swift in Sources */,

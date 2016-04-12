@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather App/DataStruct.swift"
-            timestampString = "479674453.398612"
+            timestampString = "482186493.795174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "DataStruct"
             landmarkType = "3">
          </BreakpointContent>

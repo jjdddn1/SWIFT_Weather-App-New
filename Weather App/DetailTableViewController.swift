@@ -61,7 +61,7 @@ class DetailTableViewController: UITableViewController {
             cell.layer.hidden = false
             
             let delay = diff * Double(i - 1)
-            UIView.animateWithDuration(0.3, delay: delay, options: UIViewAnimationOptions.CurveEaseInOut, animations:{ () -> Void in
+            UIView.animateWithDuration(0.2, delay: delay, options: UIViewAnimationOptions.CurveEaseInOut, animations:{ () -> Void in
                 cell.transform = CGAffineTransformMakeTranslation(0, 0)
                 cell.alpha = 1
                 }, completion : nil)

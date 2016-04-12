@@ -16,6 +16,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherAppLabel: UILabel!
     @IBOutlet weak var backGroundImageView: UIImageView!
     
+    @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
@@ -59,8 +60,9 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var spinerImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataStruct.welcomeViewController = self
         spinerImageView.image = UIImage.gifWithName("loading2")
-
+        spinerImageView.hidden = false
         self.view.userInteractionEnabled = false
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -110,7 +112,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         self.FifthTempLabel.alpha = 0
         self.currentLocationButton.alpha = 0
         self.menuButton.alpha = 0
-
+        self.historyButton.alpha = 0
     }
     
     func arrowAnimationStart(){
@@ -192,6 +194,8 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.weatherAppLabel.transform = CGAffineTransformMakeTranslation(0, -self.distance)
             self.currentLocationButton.alpha = 1
             self.menuButton.alpha = 1
+            self.historyButton.alpha = 1
+            
             }) { (Bool) -> Void in
                 UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                     self.currentWeatherImageView.alpha = 1
@@ -290,6 +294,8 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.FifthTempLabel.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.currentLocationButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.menuButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
+            self.historyButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
+            
             }, completion: nil)
 
     }
@@ -322,6 +328,8 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.FifthTempLabel.transform = CGAffineTransformMakeTranslation(0,0)
             self.currentLocationButton.transform = CGAffineTransformMakeTranslation(0,0)
             self.menuButton.transform = CGAffineTransformMakeTranslation(0,0)
+            self.historyButton.transform = CGAffineTransformMakeTranslation(0,0)
+            
             }){(Bool) -> Void in
                 self.arrowAnimation = true
                 self.arrowAnimationStart()

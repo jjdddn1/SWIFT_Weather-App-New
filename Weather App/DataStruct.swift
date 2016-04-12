@@ -10,6 +10,9 @@ import Foundation
 import SwiftyJSON
 
 struct DataStruct {
+    
+
+    
     static var needCheck = false
     
     static var jsonfile: JSON!
@@ -59,4 +62,8 @@ struct DataStruct {
     static var dic = Dictionary<Int, Array<String>>()
     
     static var dic7 = Dictionary<Int,Array<String>>()
+    
+    static var welcomeViewController: WelcomeViewController!
+    
+    static var cities : [Location] = []
 }

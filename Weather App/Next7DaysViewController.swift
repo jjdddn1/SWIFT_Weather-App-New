@@ -52,7 +52,7 @@ class Next7DaysViewController: UIViewController, UICollectionViewDelegate, UICol
     func everythingGetBackToOrigin(){
         self.collectionView.userInteractionEnabled = false
         
-        UIView.animateWithDuration(0.6, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+        UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
             self.cellCache.center = self.center
             let cells = self.collectionView.visibleCells()
             for singleCell in cells {
@@ -113,7 +113,7 @@ class Next7DaysViewController: UIViewController, UICollectionViewDelegate, UICol
         center = cellCache.center
         self.collectionView.userInteractionEnabled = false
         DataStruct.dayNum = indexPath.row + 1
-        UIView.animateWithDuration(0.6, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+        UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
             self.cellCache.center = CGPoint(x: self.center.x , y: 75 + self.collectionView.contentOffset.y )
             let cells = self.collectionView.visibleCells()
             for singleCell in cells {
