@@ -37,9 +37,6 @@ class SearchHistoryViewController: UIViewController {
     @IBOutlet weak var View5: SpringView!
     @IBOutlet weak var View6: SpringView!
 
-    
-    
-    
     var buttonArray : [UIButton] = []
     var deleteArray : [UIButton] = []
     var buttonPosition: [Int] = []
@@ -47,6 +44,7 @@ class SearchHistoryViewController: UIViewController {
     
     @IBOutlet weak var backGroundButton: UIButton!
     
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     
     var distance :CGFloat = 0
@@ -71,6 +69,7 @@ class SearchHistoryViewController: UIViewController {
         deleteArray = [Delete1, Delete2, Delete3, Delete4, Delete5, Delete6]
         buttonArray = [Button1, Button2, Button3, Button4, Button5, Button6]
         viewArray = [View1,View2,View3, View4, View5, View6]
+
         buttonPosition = [0,1,2,3,4,5]
         setUpUI()
         
@@ -92,6 +91,20 @@ class SearchHistoryViewController: UIViewController {
         }
         
     }
+    
+    func setTitle(){
+        var count = 0
+        for dic in DataStruct.cities{
+            if(count > 5){
+                break
+            }
+            buttonArray[count].setTitle("\(dic.city), \(dic.state)", forState: .Normal)
+            count = count + 1
+        }
+        for i in count ..< buttonArray.count {
+            buttonArray[i].setTitle("< Empty >", forState: .Normal)
+        }
+    }
     func setUpUI(){
         for but in buttonArray {
             but.layer.cornerRadius = 10
@@ -100,9 +113,14 @@ class SearchHistoryViewController: UIViewController {
 
         for del in self.deleteArray {
             del.alpha = 0
+            del.hidden = true
+
         }
         let height = NavBar.frame.height
         NavBar.transform = CGAffineTransformMakeTranslation(0,-height)
+        addButton.alpha = 0
+        addButton.enabled = false
+        setTitle()
     }
     
     @IBAction func backGroundButtonPressed(sender: UIButton) {
@@ -124,8 +142,8 @@ class SearchHistoryViewController: UIViewController {
             }) { (Bool) in
                 let offset = 6 - self.buttonPosition[n!]
                 self.viewArray[n!].transform = CGAffineTransformMakeTranslation(0, -self.distance * CGFloat(offset))
-
-                
+                self.buttonArray[n!].setTitle("< Empty >", forState: .Normal)
+                self.deleteArray[n!].hidden = true
                 UIView.animateWithDuration(0.2, animations: {
 
 //                    print(self.distance)
@@ -135,6 +153,10 @@ class SearchHistoryViewController: UIViewController {
                     self.viewArray[n!].alpha = 1
 
                 }) { (Bool) in
+                    if(DataStruct.cities.count > n!){
+                        DataStruct.cities.removeAtIndex(n!)
+                    }
+                    
                     let button = self.buttonArray.removeAtIndex(n!)
                     self.buttonArray.append(button)
                     
@@ -160,7 +182,8 @@ class SearchHistoryViewController: UIViewController {
     @IBAction func editButtonPressed(sender: UIButton) {
         if(!userIsEditing){
             self.editButton.setTitle("Done", forState: UIControlState.Normal)
-
+            addButton.alpha = 1
+            addButton.enabled = true
             backGroundButton.enabled = false
             userIsEditing = true
             for button in buttonArray{
@@ -168,19 +191,24 @@ class SearchHistoryViewController: UIViewController {
             }
 
             var time = 0.0
-            for del in self.deleteArray {
-                del.hidden = false
-                UIView.animateWithDuration(0.2, delay: time * 0.1 , options: UIViewAnimationOptions.CurveEaseInOut, animations:  {
-                        del.alpha = 1
-                    del.transform = CGAffineTransformRotate(del.transform, CGFloat(15 * M_PI))
-                }, completion: nil )
-                time = time + 1
+            for i in 0 ..< self.deleteArray.count {
+                let del = deleteArray[i]
+                if(buttonArray[i].currentTitle! != "< Empty >"){
+                    del.hidden = false
+                    UIView.animateWithDuration(0.2, delay: time * 0.1 , options: UIViewAnimationOptions.CurveEaseInOut, animations:  {
+                            del.alpha = 1
+                        del.transform = CGAffineTransformRotate(del.transform, CGFloat(15 * M_PI))
+                    }, completion: nil )
+                    time = time + 1
+                }
             }
         }
         else{
             userIsEditing = false
+            addButton.alpha = 0
+            addButton.enabled = false
             self.editButton.setTitle("Edit", forState: UIControlState.Normal)
-
+            
             UIView.animateWithDuration(0.2, animations: {
                 for del in self.deleteArray {
                     del.alpha = 0
@@ -194,17 +222,14 @@ class SearchHistoryViewController: UIViewController {
                     for button in self.buttonArray{
                         button.enabled = true
                     }
-                    
             })
-
         }
-        
-//        if(userIsEditing){
-//            self.editButton.setTitle("Edit", forState: UIControlState.Normal)
-//        }else{
-//        }
     }
 
+    @IBAction func addButtonPressed(sender: UIButton) {
+        
+        
+    }
     
     /*
     // MARK: - Navigation

@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func loadUserInfo() {
         DataStruct.fahrenheit = NSUserDefaults.standardUserDefaults().boolForKey("fahrenheit")
-
+        readWithNSKeyedUnarchiver()
     }
     // MARK: - Core Data stack
 

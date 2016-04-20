@@ -69,6 +69,18 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         setUpUI()
+        
+        DataStruct.cities.removeAll()
+        let newLoc1 = Location(city: "Beijing", state: "China")
+        let newLoc2 = Location(city: "HeBei", state: "China")
+        let newLoc3 = Location(city: "Shanghai", state: "China")
+        let newLoc4 = Location(city: "Shandong", state: "China")
+
+        DataStruct.cities.append(newLoc1!)
+        DataStruct.cities.append(newLoc2!)
+        DataStruct.cities.append(newLoc3!)
+        DataStruct.cities.append(newLoc4!)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
