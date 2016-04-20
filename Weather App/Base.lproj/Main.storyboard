@@ -326,55 +326,6 @@
                                     <constraint firstAttribute="bottom" secondItem="GQx-ys-5HR" secondAttribute="bottom" constant="8" id="hnA-8P-2Wq"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZV-hk-Bt1" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="20" y="105" width="344" height="76"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-5Q-c0h">
-                                        <rect key="frame" x="0.0" y="16" width="331" height="60"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="0.90377155180000002" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Button1">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="squeezeUp"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="curve" value="easeOut"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="0.40000000000000002"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="0" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64t-np-dIp">
-                                        <rect key="frame" x="314" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="VVM-XS-yph"/>
-                                            <constraint firstAttribute="height" constant="30" id="tnH-DE-hTA"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="Cancel 2"/>
-                                        <connections>
-                                            <action selector="deleteButtonPressed:" destination="vwl-S7-fsK" eventType="touchUpInside" id="CnB-oA-TSa"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="64t-np-dIp" secondAttribute="trailing" id="G08-8u-SXE"/>
-                                    <constraint firstItem="hPG-5Q-c0h" firstAttribute="leading" secondItem="uZV-hk-Bt1" secondAttribute="leading" id="PLE-ad-UUL"/>
-                                    <constraint firstItem="hPG-5Q-c0h" firstAttribute="top" secondItem="uZV-hk-Bt1" secondAttribute="top" constant="16" id="W8y-Wz-Qe2"/>
-                                    <constraint firstAttribute="bottom" secondItem="hPG-5Q-c0h" secondAttribute="bottom" id="mCG-U2-urS"/>
-                                    <constraint firstItem="64t-np-dIp" firstAttribute="top" secondItem="uZV-hk-Bt1" secondAttribute="top" id="tbg-pY-pIs"/>
-                                    <constraint firstAttribute="trailing" secondItem="hPG-5Q-c0h" secondAttribute="trailing" constant="13" id="v9z-aU-UHU"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUx-tM-YxO" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="20" y="189" width="344" height="76"/>
                                 <subviews>
@@ -396,7 +347,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFn-Pc-P3i">
                                         <rect key="frame" x="314" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="yni-Q6-MQx"/>
                                             <constraint firstAttribute="height" constant="30" id="ynt-qK-iFm"/>
@@ -407,7 +357,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="7AI-kA-gK6" secondAttribute="bottom" id="EWt-9S-29h"/>
                                     <constraint firstItem="zFn-Pc-P3i" firstAttribute="top" secondItem="kUx-tM-YxO" secondAttribute="top" id="Peg-OR-Kp1"/>
@@ -421,6 +370,54 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYd-Zy-gBq" customClass="SpringView" customModule="Spring">
+                                <rect key="frame" x="20" y="273" width="344" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3R4-Be-5Y2">
+                                        <rect key="frame" x="0.0" y="16" width="331" height="60"/>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="0.90377155180000002" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="Button3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="squeezeUp"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="curve" value="easeOut"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                                <real key="value" value="0.40000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ote-jT-Lcz">
+                                        <rect key="frame" x="314" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="2Ig-RY-eke"/>
+                                            <constraint firstAttribute="height" constant="30" id="qNZ-qu-TUs"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Cancel 2"/>
+                                        <connections>
+                                            <action selector="deleteButtonPressed:" destination="vwl-S7-fsK" eventType="touchUpInside" id="huo-mc-wC7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3R4-Be-5Y2" firstAttribute="leading" secondItem="lYd-Zy-gBq" secondAttribute="leading" id="0th-RR-lme"/>
+                                    <constraint firstItem="3R4-Be-5Y2" firstAttribute="top" secondItem="lYd-Zy-gBq" secondAttribute="top" constant="16" id="2fZ-Hv-G3X"/>
+                                    <constraint firstAttribute="bottom" secondItem="3R4-Be-5Y2" secondAttribute="bottom" id="EDD-4I-eqG"/>
+                                    <constraint firstItem="Ote-jT-Lcz" firstAttribute="top" secondItem="lYd-Zy-gBq" secondAttribute="top" id="G7l-Ok-Rll"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ote-jT-Lcz" secondAttribute="trailing" id="aid-yv-58s"/>
+                                    <constraint firstAttribute="height" constant="76" id="joC-LK-IRR"/>
+                                    <constraint firstAttribute="trailing" secondItem="3R4-Be-5Y2" secondAttribute="trailing" constant="13" id="xdw-oU-oMi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -445,7 +442,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAP-8I-JTy">
                                         <rect key="frame" x="314" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="gNb-vL-f1n"/>
                                             <constraint firstAttribute="width" constant="30" id="usm-n6-HLo"/>
@@ -456,7 +452,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="BzX-6q-BbU" firstAttribute="leading" secondItem="Cu7-Fu-IEi" secondAttribute="leading" id="BAj-GE-3fZ"/>
                                     <constraint firstAttribute="bottom" secondItem="BzX-6q-BbU" secondAttribute="bottom" id="FGr-Kw-9JP"/>
@@ -495,7 +490,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKp-9g-w2V">
                                         <rect key="frame" x="314" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="F3L-rI-dpt"/>
                                             <constraint firstAttribute="height" constant="30" id="Qgc-Uf-TMO"/>
@@ -506,7 +500,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="85g-kP-OCj" firstAttribute="leading" secondItem="PWu-ue-hy4" secondAttribute="leading" id="2Gf-lW-aed"/>
                                     <constraint firstItem="sKp-9g-w2V" firstAttribute="top" secondItem="PWu-ue-hy4" secondAttribute="top" id="AkO-UW-3PK"/>
@@ -545,7 +538,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo0-6j-Xda">
                                         <rect key="frame" x="314" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0Mx-qc-09m"/>
                                             <constraint firstAttribute="width" constant="30" id="uC7-zj-JwP"/>
@@ -556,7 +548,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ICe-sJ-Qfm" firstAttribute="top" secondItem="9Ic-Kn-bfL" secondAttribute="top" constant="16" id="0J4-qD-Sve"/>
                                     <constraint firstItem="ICe-sJ-Qfm" firstAttribute="leading" secondItem="9Ic-Kn-bfL" secondAttribute="leading" id="6NN-ZJ-Ys4"/>
@@ -574,14 +565,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYd-Zy-gBq" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="20" y="273" width="344" height="76"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZV-hk-Bt1" customClass="SpringView" customModule="Spring">
+                                <rect key="frame" x="20" y="105" width="344" height="76"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3R4-Be-5Y2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-5Q-c0h">
                                         <rect key="frame" x="0.0" y="16" width="331" height="60"/>
                                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="0.90377155180000002" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Button3">
+                                        <state key="normal" title="Button1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -593,34 +584,31 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ote-jT-Lcz">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="0" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64t-np-dIp">
                                         <rect key="frame" x="314" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="2Ig-RY-eke"/>
-                                            <constraint firstAttribute="height" constant="30" id="qNZ-qu-TUs"/>
+                                            <constraint firstAttribute="width" constant="30" id="VVM-XS-yph"/>
+                                            <constraint firstAttribute="height" constant="30" id="tnH-DE-hTA"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Cancel 2"/>
                                         <connections>
-                                            <action selector="deleteButtonPressed:" destination="vwl-S7-fsK" eventType="touchUpInside" id="huo-mc-wC7"/>
+                                            <action selector="deleteButtonPressed:" destination="vwl-S7-fsK" eventType="touchUpInside" id="CnB-oA-TSa"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="3R4-Be-5Y2" firstAttribute="leading" secondItem="lYd-Zy-gBq" secondAttribute="leading" id="0th-RR-lme"/>
-                                    <constraint firstItem="3R4-Be-5Y2" firstAttribute="top" secondItem="lYd-Zy-gBq" secondAttribute="top" constant="16" id="2fZ-Hv-G3X"/>
-                                    <constraint firstAttribute="bottom" secondItem="3R4-Be-5Y2" secondAttribute="bottom" id="EDD-4I-eqG"/>
-                                    <constraint firstItem="Ote-jT-Lcz" firstAttribute="top" secondItem="lYd-Zy-gBq" secondAttribute="top" id="G7l-Ok-Rll"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ote-jT-Lcz" secondAttribute="trailing" id="aid-yv-58s"/>
-                                    <constraint firstAttribute="height" constant="76" id="joC-LK-IRR"/>
-                                    <constraint firstAttribute="trailing" secondItem="3R4-Be-5Y2" secondAttribute="trailing" constant="13" id="xdw-oU-oMi"/>
+                                    <constraint firstAttribute="trailing" secondItem="64t-np-dIp" secondAttribute="trailing" id="G08-8u-SXE"/>
+                                    <constraint firstItem="hPG-5Q-c0h" firstAttribute="leading" secondItem="uZV-hk-Bt1" secondAttribute="leading" id="PLE-ad-UUL"/>
+                                    <constraint firstItem="hPG-5Q-c0h" firstAttribute="top" secondItem="uZV-hk-Bt1" secondAttribute="top" constant="16" id="W8y-Wz-Qe2"/>
+                                    <constraint firstAttribute="bottom" secondItem="hPG-5Q-c0h" secondAttribute="bottom" id="mCG-U2-urS"/>
+                                    <constraint firstItem="64t-np-dIp" firstAttribute="top" secondItem="uZV-hk-Bt1" secondAttribute="top" id="tbg-pY-pIs"/>
+                                    <constraint firstAttribute="trailing" secondItem="hPG-5Q-c0h" secondAttribute="trailing" constant="13" id="v9z-aU-UHU"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <real key="value" value="0.20000000000000001"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
