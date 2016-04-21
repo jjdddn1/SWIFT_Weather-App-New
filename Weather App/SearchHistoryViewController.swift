@@ -227,7 +227,9 @@ class SearchHistoryViewController: UIViewController {
     }
 
     @IBAction func addButtonPressed(sender: UIButton) {
-        
+        if userIsEditing{
+            self.performSegueWithIdentifier("addSegue", sender: self)
+        }
         
     }
     

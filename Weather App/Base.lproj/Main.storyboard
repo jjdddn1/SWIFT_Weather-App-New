@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OTx-xH-161">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -279,10 +279,10 @@
             </objects>
             <point key="canvasLocation" x="-159.5" y="381.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Add City View Controller-->
         <scene sceneID="DFM-YW-f3r">
             <objects>
-                <viewController id="OTx-xH-161" sceneMemberID="viewController">
+                <viewController id="OTx-xH-161" customClass="AddCityViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pWW-m2-kah"/>
                         <viewControllerLayoutGuide type="bottom" id="7rt-69-H98"/>
@@ -292,7 +292,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekg-QO-8Qd">
-                                <rect key="frame" x="20" y="120" width="335" height="527"/>
+                                <rect key="frame" x="20" y="90" width="335" height="557"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the city name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kIZ-nP-dhM">
                                         <rect key="frame" x="8" y="63" width="320" height="40"/>
@@ -345,7 +345,7 @@
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9i-tN-qvs">
-                                        <rect key="frame" x="8" y="222" width="320" height="190"/>
+                                        <rect key="frame" x="8" y="222" width="320" height="220"/>
                                         <connections>
                                             <outlet property="dataSource" destination="ym9-61-M13" id="cSL-vi-kya"/>
                                             <outlet property="delegate" destination="ym9-61-M13" id="m5T-kx-jhB"/>
@@ -396,11 +396,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MjM-ym-yPK" firstAttribute="centerX" secondItem="Ekg-QO-8Qd" secondAttribute="centerX" id="0az-JZ-ieE"/>
                             <constraint firstAttribute="bottom" secondItem="Ekg-QO-8Qd" secondAttribute="bottom" constant="20" symbolic="YES" id="2a3-xB-rfT"/>
-                            <constraint firstItem="Ekg-QO-8Qd" firstAttribute="top" secondItem="pWW-m2-kah" secondAttribute="bottom" constant="100" id="4Y5-mY-QZQ"/>
+                            <constraint firstItem="Ekg-QO-8Qd" firstAttribute="top" secondItem="pWW-m2-kah" secondAttribute="bottom" constant="70" id="4Y5-mY-QZQ"/>
                             <constraint firstItem="NFI-ly-mXd" firstAttribute="top" secondItem="Y9i-tN-qvs" secondAttribute="bottom" constant="18" id="HPD-Fh-SEn"/>
                             <constraint firstItem="NFI-ly-mXd" firstAttribute="trailing" secondItem="27m-NU-JWK" secondAttribute="trailing" id="Jcz-tY-4oL"/>
                             <constraint firstItem="NFI-ly-mXd" firstAttribute="leading" secondItem="27m-NU-JWK" secondAttribute="leading" id="dVu-Ng-kyW"/>
@@ -411,6 +410,10 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="backGroundView" destination="Ekg-QO-8Qd" id="Cgp-eY-8pH"/>
+                        <outlet property="cityTextField" destination="kIZ-nP-dhM" id="DR6-aS-x23"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbf-Xk-kA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -821,6 +824,7 @@
                         <outlet property="addButton" destination="U78-nC-T5J" id="iDF-aN-rVh"/>
                         <outlet property="backGroundButton" destination="npf-Ae-iI4" id="dNW-Xg-hVK"/>
                         <outlet property="editButton" destination="5kV-od-OPT" id="iUA-KX-sUE"/>
+                        <segue destination="OTx-xH-161" kind="presentation" identifier="addSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="6zP-e2-cPM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fK5-Qt-O5T" userLabel="First Responder" sceneMemberID="firstResponder"/>

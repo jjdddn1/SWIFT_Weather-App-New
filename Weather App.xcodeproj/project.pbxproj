@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8611152C1CC88FE2002FD7D0 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611152B1CC88FE2002FD7D0 /* AddCityViewController.swift */; };
 		8629B0181C953CEB00463DE6 /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B0171C953CEB00463DE6 /* TodayTableViewController.swift */; };
 		8629B01A1C9541CF00463DE6 /* 4244272-night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8629B0191C9541CF00463DE6 /* 4244272-night.jpg */; };
 		8629B01D1C954DD700463DE6 /* stars-in-the-sky-digital-art-hd-wallpaper-2560x1440-2122.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8629B01C1C954DD700463DE6 /* stars-in-the-sky-digital-art-hd-wallpaper-2560x1440-2122.jpg */; };
@@ -104,6 +105,7 @@
 		3636129D455FE0DB7563B751 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5DD3844C8BDCF50C25BE2C91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8475179BFE7E04506567BC66 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8611152B1CC88FE2002FD7D0 /* AddCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		8629B0171C953CEB00463DE6 /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 		8629B0191C9541CF00463DE6 /* 4244272-night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "4244272-night.jpg"; sourceTree = "<group>"; };
 		8629B01C1C954DD700463DE6 /* stars-in-the-sky-digital-art-hd-wallpaper-2560x1440-2122.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "stars-in-the-sky-digital-art-hd-wallpaper-2560x1440-2122.jpg"; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				86BC3C821C9728D100A91FE5 /* ShareViewController.swift */,
 				86BC3C861C9748B800A91FE5 /* AboutViewController.swift */,
 				865AE5E61CBCA24F0089D394 /* SearchHistoryViewController.swift */,
+				8611152B1CC88FE2002FD7D0 /* AddCityViewController.swift */,
 				86F76BAD1C93BC9E00ACBCDB /* Main.storyboard */,
 				86F76BB31C93BC9E00ACBCDB /* Assets.xcassets */,
 				86F76BB51C93BC9F00ACBCDB /* LaunchScreen.storyboard */,
@@ -610,6 +613,7 @@
 				86F76BAC1C93BC9E00ACBCDB /* WelcomeViewController.swift in Sources */,
 				8629B04E1C965EAE00463DE6 /* SearchViewController.swift in Sources */,
 				865AE5E91CBD96A80089D394 /* Location.swift in Sources */,
+				8611152C1CC88FE2002FD7D0 /* AddCityViewController.swift in Sources */,
 				8629B0451C9616FC00463DE6 /* Next7DaysViewController.swift in Sources */,
 				86EDCBFC1C93EA7100812D2B /* UIImage+Gif.swift in Sources */,
 				86F76BAA1C93BC9E00ACBCDB /* AppDelegate.swift in Sources */,
