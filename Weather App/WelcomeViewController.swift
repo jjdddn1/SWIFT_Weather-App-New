@@ -168,21 +168,24 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
         
         if haveCurrentLocation != true{
-            self.getJSON()
+            let thisUrl = createURL()
+            self.getJSON(thisUrl)
         }
         haveCurrentLocation = true
     }
     
-    func getJSON(){
-        self.view.userInteractionEnabled = false
-        self.spinerImageView.hidden = false
-        
+    func createURL() -> NSURL{
         let urlStringBase = "http://huiyuanr-env.elasticbeanstalk.com/?"
         let urlStringArg = "latitude=\(DataStruct.latitude)&longtitude=\(DataStruct.longitude)&degree=" + (DataStruct.fahrenheit == true ? "fahrenheit" : "si")
         let url = NSURL(string: urlStringBase + urlStringArg.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)
-        print("URL:" , url)
-        print("Start Requesting JSON")
-        Alamofire.request(.GET, url!).validate().responseJSON { response in
+        return url!
+    }
+    
+    func getJSON(url: NSURL){
+        self.view.userInteractionEnabled = false
+        self.spinerImageView.hidden = false
+    
+        Alamofire.request(.GET, url).validate().responseJSON { response in
             switch response.result {
             case .Success:
                 if let value = response.result.value {

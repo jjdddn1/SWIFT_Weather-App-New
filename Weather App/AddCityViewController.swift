@@ -8,8 +8,11 @@
 
 import UIKit
 import Spring
+import Alamofire
 
 class AddCityViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+    
+    var beforeViewController: SearchHistoryViewController!
 
     @IBOutlet weak var backGroundView: SpringView!
     
@@ -98,14 +101,24 @@ class AddCityViewController: UIViewController,UIPickerViewDataSource, UIPickerVi
         let paddingView = UIView.init(frame: CGRectMake(0, 0, 8, 30))
         cityTextField.leftView = paddingView
         cityTextField.leftViewMode = UITextFieldViewMode.Always
+        cityTextField.attributedPlaceholder = NSAttributedString(string:"Enter the city name",
+                                                          attributes:[NSFontAttributeName:UIFont(name: "Trebuchet MS", size: 15.0)!,NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        
+        
         let paddingView2 = UIView.init(frame: CGRectMake(0, 0, 8, 30))
-
         stateTextField.leftView = paddingView2
         stateTextField.leftViewMode = UITextFieldViewMode.Always
+        stateTextField.attributedPlaceholder = NSAttributedString(string:"Enter or select state name",
+                                                                 attributes:[NSFontAttributeName:UIFont(name: "Trebuchet MS", size: 15.0)!,NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         
         addButton.layer.cornerRadius = 5
+        addButton.layer.borderColor = UIColor.whiteColor().CGColor
+        addButton.layer.borderWidth = 1
         cancelButton.layer.cornerRadius = 5
+        cancelButton.layer.borderColor = UIColor.whiteColor().CGColor
+        cancelButton.layer.borderWidth = 1
 
+        
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -145,8 +158,15 @@ class AddCityViewController: UIViewController,UIPickerViewDataSource, UIPickerVi
     }
     
     @IBAction func AddButtonPressed(sender: UIButton) {
-        checkError()
+        if checkError(){
+            let loc = Location(city: cityTextField.text!, state: stateTextField.text!)
+            DataStruct.cities.append(loc!)
+            CancelButtonPressed(UIButton())
+            beforeViewController.editButtonPressed(UIButton())
+            beforeViewController.setTitle()
+        }
     }
+    
     @IBAction func CancelButtonPressed(sender: UIButton) {
         backGroundView.animation = "fall"
         backGroundView.animateNext {
@@ -164,9 +184,16 @@ class AddCityViewController: UIViewController,UIPickerViewDataSource, UIPickerVi
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-//    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
-//        
-//    }
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        var pickerLabel = view as! UILabel!
+        if view == nil {  //if no label there yet
+            pickerLabel = UILabel()
+        }
+        let myTitle = NSAttributedString(string: stateArray[row], attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 18.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        pickerLabel!.attributedText = myTitle
+        pickerLabel!.textAlignment = .Center
+        return pickerLabel
+    }
 
     /*
     // MARK: - Navigation

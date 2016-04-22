@@ -41,6 +41,7 @@ class SearchHistoryViewController: UIViewController {
     var deleteArray : [UIButton] = []
     var buttonPosition: [Int] = []
     var viewArray: [UIView] = []
+    var currentPosArray:[Int] = []
     
     @IBOutlet weak var backGroundButton: UIButton!
     
@@ -71,6 +72,7 @@ class SearchHistoryViewController: UIViewController {
         viewArray = [View1,View2,View3, View4, View5, View6]
 
         buttonPosition = [0,1,2,3,4,5]
+        currentPosArray = [0,1,2,3,4,5]
         setUpUI()
         
         UIView.animateWithDuration(0.4) {
@@ -127,6 +129,35 @@ class SearchHistoryViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func cityButtonPressed(sender: UIButton) {
+        var num = 7
+        switch sender {
+        case Button1:
+            num = currentPosArray[0]
+        case Button2:
+            num = currentPosArray[1]
+        case Button3:
+            num = currentPosArray[2]
+        case Button4:
+            num = currentPosArray[3]
+        case Button5:
+            num = currentPosArray[4]
+        case Button6:
+            num = currentPosArray[5]
+        default:
+            break
+        }
+        if DataStruct.cities.count > num {
+            DataStruct.street = DataStruct.cities[num].city
+            DataStruct.city = DataStruct.cities[num].city
+            DataStruct.state = DataStruct.cities[num].state
+            let url = createUrl(DataStruct.cities[num].city, cityV: DataStruct.cities[num].city, stateV: DataStruct.cities[num].state, fahrenheitV: DataStruct.fahrenheit)
+            backGroundButtonPressed(UIButton())
+            DataStruct.welcomeViewController.getJSON(NSURL(string: url)!)
+            
+        }
+    }
+    
     @IBAction func deleteButtonPressed(sender: UIButton) {
         let n = Int(sender.restorationIdentifier!)
         for del in deleteArray {
@@ -148,8 +179,10 @@ class SearchHistoryViewController: UIViewController {
 
 //                    print(self.distance)
                     for i in (n!) ..<  self.viewArray.count {
+                        self.currentPosArray[i] =  self.currentPosArray[i] - 1
                         self.viewArray[i].transform = CGAffineTransformTranslate(self.viewArray[i].transform, 0, self.distance)
                     }
+                    self.currentPosArray[n!] = 6
                     self.viewArray[n!].alpha = 1
 
                 }) { (Bool) in
@@ -233,14 +266,25 @@ class SearchHistoryViewController: UIViewController {
         
     }
     
-    /*
+    func createUrl( streetV : String , cityV : String , stateV : String , fahrenheitV: Bool) -> String {
+        let urlBase = "http://huiyuanr-env.elasticbeanstalk.com/?"
+        let url = urlBase + ("street_address=" + streetV + "&city=" + cityV + "&state=" + stateV + "&degree=" + (fahrenheitV ? "fahrenheit": "celsius")).stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        
+        return url
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "addSegue"{
+            let des = segue.destinationViewController as! AddCityViewController
+            des.beforeViewController = self
+        
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
