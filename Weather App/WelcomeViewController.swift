@@ -19,6 +19,8 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var upButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
@@ -69,17 +71,17 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         setUpUI()
-        
-        DataStruct.cities.removeAll()
-        let newLoc1 = Location(city: "Beijing", state: "China")
-        let newLoc2 = Location(city: "HeBei", state: "China")
-        let newLoc3 = Location(city: "Shanghai", state: "China")
-        let newLoc4 = Location(city: "Shandong", state: "China")
-
-        DataStruct.cities.append(newLoc1!)
-        DataStruct.cities.append(newLoc2!)
-        DataStruct.cities.append(newLoc3!)
-        DataStruct.cities.append(newLoc4!)
+//        
+//        DataStruct.cities.removeAll()
+//        let newLoc1 = Location(city: "Beijing", state: "China")
+//        let newLoc2 = Location(city: "HeBei", state: "China")
+//        let newLoc3 = Location(city: "Shanghai", state: "China")
+//        let newLoc4 = Location(city: "Shandong", state: "China")
+//
+//        DataStruct.cities.append(newLoc1!)
+//        DataStruct.cities.append(newLoc2!)
+//        DataStruct.cities.append(newLoc3!)
+//        DataStruct.cities.append(newLoc4!)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -125,6 +127,18 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         self.currentLocationButton.alpha = 0
         self.menuButton.alpha = 0
         self.historyButton.alpha = 0
+        self.shareButton.alpha = 0
+        
+        let context = CIContext(options: nil)
+        let image = CIImage(image: UIImage(named: "CircumpolarStarTrails.jpg")!)
+        let filter = CIFilter(name: "CIBoxBlur")
+        filter?.setValue(image, forKey: kCIInputImageKey)
+        filter?.setValue(20.0, forKey: "inputRadius")
+        let result = filter?.valueForKey(kCIOutputImageKey) as! CIImage
+        let outImage = context.createCGImage(result, fromRect: result.extent)
+        let blurImage = UIImage(CGImage: outImage)
+        backGroundImageView.image = blurImage
+        backGroundImageView.contentMode = .ScaleToFill
     }
     
     func arrowAnimationStart(){
@@ -210,7 +224,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.currentLocationButton.alpha = 1
             self.menuButton.alpha = 1
             self.historyButton.alpha = 1
-            
+            self.shareButton.alpha = 1
             }) { (Bool) -> Void in
                 UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                     self.currentWeatherImageView.alpha = 1
@@ -310,7 +324,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.currentLocationButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.menuButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             self.historyButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
-            
+            self.shareButton.transform = CGAffineTransformMakeTranslation(x * self.view.bounds.width, y * self.view.bounds.height)
             }, completion: nil)
 
     }
@@ -344,7 +358,8 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.currentLocationButton.transform = CGAffineTransformMakeTranslation(0,0)
             self.menuButton.transform = CGAffineTransformMakeTranslation(0,0)
             self.historyButton.transform = CGAffineTransformMakeTranslation(0,0)
-            
+            self.shareButton.transform = CGAffineTransformMakeTranslation(0,0)
+
             }){(Bool) -> Void in
                 self.arrowAnimation = true
                 self.arrowAnimationStart()
@@ -379,6 +394,12 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func menuButtonPressed(sender: UIButton) {
         performSegueWithIdentifier("showMenuSegue", sender: self)
 
+    }
+    @IBAction func shareButtonPressed(sender: UIButton) {
+        let url = NSURL(string: "whatsapp://send?text=Hello%2C%20World!")
+        if UIApplication.sharedApplication().canOpenURL(url!){
+            UIApplication.sharedApplication().openURL(url!)
+        }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "swipeUpSegue" {

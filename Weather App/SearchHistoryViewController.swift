@@ -49,7 +49,7 @@ class SearchHistoryViewController: UIViewController {
     @IBOutlet weak var editButton: UIButton!
     
     var distance :CGFloat = 0
-
+    var userIsEditing = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +61,9 @@ class SearchHistoryViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func viewDidAppear(animated: Bool) {
         distance = self.viewArray[0].center.y - self.viewArray[1].center.y
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -88,10 +88,7 @@ class SearchHistoryViewController: UIViewController {
             for view in self.viewArray {
                 view.transform = CGAffineTransformMakeTranslation(0,100)
             }
-
-
         }
-        
     }
     
     func setTitle(){
@@ -107,6 +104,7 @@ class SearchHistoryViewController: UIViewController {
             buttonArray[i].setTitle("< Empty >", forState: .Normal)
         }
     }
+    
     func setUpUI(){
         for but in buttonArray {
             but.layer.cornerRadius = 10
@@ -155,6 +153,8 @@ class SearchHistoryViewController: UIViewController {
             backGroundButtonPressed(UIButton())
             DataStruct.welcomeViewController.getJSON(NSURL(string: url)!)
             
+        }else if userIsEditing {
+            addButtonPressed(UIButton())
         }
     }
     
@@ -174,6 +174,7 @@ class SearchHistoryViewController: UIViewController {
                 let offset = 6 - self.buttonPosition[n!]
                 self.viewArray[n!].transform = CGAffineTransformMakeTranslation(0, -self.distance * CGFloat(offset))
                 self.buttonArray[n!].setTitle("< Empty >", forState: .Normal)
+                self.buttonArray[n!].enabled = true
                 self.deleteArray[n!].hidden = true
                 UIView.animateWithDuration(0.2, animations: {
 
@@ -211,7 +212,6 @@ class SearchHistoryViewController: UIViewController {
         }
     }
     
-    var userIsEditing = false
     @IBAction func editButtonPressed(sender: UIButton) {
         if(!userIsEditing){
             self.editButton.setTitle("Done", forState: UIControlState.Normal)
@@ -219,8 +219,10 @@ class SearchHistoryViewController: UIViewController {
             addButton.enabled = true
             backGroundButton.enabled = false
             userIsEditing = true
-            for button in buttonArray{
-                button.enabled = false
+            for button in buttonArray {
+                if button.currentTitle != "< Empty >"{
+                    button.enabled = false
+                }
             }
 
             var time = 0.0

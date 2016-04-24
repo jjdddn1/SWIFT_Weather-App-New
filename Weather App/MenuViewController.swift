@@ -59,7 +59,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.textLabel?.text = "Send Feedback"
             break
         case 2:
-            cell.textLabel?.text = "Share"
+            cell.textLabel?.text = "Share this app"
             break
         case 3:
             cell.textLabel?.text = "Rate me in App Store"

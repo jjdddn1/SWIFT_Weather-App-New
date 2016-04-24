@@ -53,7 +53,7 @@
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKb-c7-QjW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKb-c7-QjW">
                                 <rect key="frame" x="170" y="125" width="35" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -887,7 +887,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CircumpolarStarTrails.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RxK-sR-oSE">
-                                <rect key="frame" x="-375" y="-667" width="1125" height="2001"/>
+                                <rect key="frame" x="-384" y="-684" width="1143" height="2035"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L: 54° | H: 73°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVE-je-K7H">
@@ -1081,7 +1081,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7eN-77-PBI">
-                                <rect key="frame" x="137" y="367" width="100" height="100"/>
+                                <rect key="frame" x="137" y="402" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Jir-Af-0sm"/>
                                     <constraint firstAttribute="height" constant="100" id="MBN-HD-rXX"/>
@@ -1099,6 +1099,18 @@
                                     <segue destination="vwl-S7-fsK" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="VgB-Xx-eiy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qG-VU-z59">
+                                <rect key="frame" x="323" y="617" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="H1y-ce-TAd"/>
+                                    <constraint firstAttribute="height" constant="40" id="M42-yp-5Zh"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Upload"/>
+                                <connections>
+                                    <action selector="historyButtonPressed:" destination="ym9-61-M13" eventType="touchUpInside" id="fem-Ou-pLL"/>
+                                    <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYH-kF-mJp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1108,7 +1120,8 @@
                             <constraint firstItem="RxK-sR-oSE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="33f-bJ-VCl"/>
                             <constraint firstItem="0G8-Lg-xLb" firstAttribute="top" secondItem="WKd-7L-Fzl" secondAttribute="bottom" constant="9" id="3AJ-1w-hmV"/>
                             <constraint firstItem="j4d-7F-HR9" firstAttribute="centerY" secondItem="WIC-9l-RSs" secondAttribute="centerY" id="4eX-K4-9NS"/>
-                            <constraint firstItem="RxK-sR-oSE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="3:1" id="54e-nW-5Ee"/>
+                            <constraint firstItem="RxK-sR-oSE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="3.05:1" id="54e-nW-5Ee"/>
+                            <constraint firstItem="8qG-VU-z59" firstAttribute="bottom" secondItem="F32-6c-xQu" secondAttribute="bottom" id="5Mc-2d-vZI"/>
                             <constraint firstItem="YhP-4l-saq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7tX-l6-ChR"/>
                             <constraint firstItem="9Yt-xZ-Dj2" firstAttribute="leading" secondItem="uQm-Nw-CHY" secondAttribute="trailing" constant="9" id="8HH-Cj-Zb2"/>
                             <constraint firstItem="WIC-9l-RSs" firstAttribute="top" secondItem="1uL-t9-vwh" secondAttribute="bottom" constant="5" id="8Up-VU-pRd"/>
@@ -1125,12 +1138,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9Yt-xZ-Dj2" secondAttribute="trailing" id="FtE-vn-eRh"/>
                             <constraint firstItem="RxK-sR-oSE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IOz-W0-vbS"/>
                             <constraint firstItem="WIC-9l-RSs" firstAttribute="leading" secondItem="j4d-7F-HR9" secondAttribute="trailing" constant="8" id="Ja9-Wh-oSH"/>
+                            <constraint firstItem="8qG-VU-z59" firstAttribute="trailing" secondItem="Drx-yJ-Mum" secondAttribute="trailing" id="Jps-Wh-5rd"/>
                             <constraint firstItem="HA4-qI-8TZ" firstAttribute="centerY" secondItem="WIC-9l-RSs" secondAttribute="centerY" id="Kkp-c4-VCN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F32-6c-xQu" secondAttribute="bottom" constant="10" id="Lbo-CR-k0L"/>
                             <constraint firstItem="TD9-ig-2zq" firstAttribute="leading" secondItem="mdp-n5-eKO" secondAttribute="trailing" constant="8" id="NQ5-MS-PRK"/>
                             <constraint firstItem="tVE-je-K7H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NVi-56-CBF"/>
                             <constraint firstItem="F32-6c-xQu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="PgH-Vb-Q36"/>
-                            <constraint firstItem="7eN-77-PBI" firstAttribute="top" secondItem="Gqr-rJ-1ad" secondAttribute="bottom" constant="15" id="SAo-MJ-BkW"/>
+                            <constraint firstItem="7eN-77-PBI" firstAttribute="top" secondItem="Gqr-rJ-1ad" secondAttribute="bottom" constant="50" id="SAo-MJ-BkW"/>
                             <constraint firstItem="7eN-77-PBI" firstAttribute="centerX" secondItem="Gqr-rJ-1ad" secondAttribute="centerX" id="TT0-RG-cXE"/>
                             <constraint firstItem="0G8-Lg-xLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TY6-ap-6p0"/>
                             <constraint firstItem="TD9-ig-2zq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UH3-AT-24W"/>
@@ -1174,7 +1188,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Drx-yJ-Mum" secondAttribute="trailing" constant="-4" id="xnM-s9-2KV"/>
                             <constraint firstItem="9Yt-xZ-Dj2" firstAttribute="centerY" secondItem="uQm-Nw-CHY" secondAttribute="centerY" id="y6i-Fq-HHE"/>
                             <constraint firstItem="Gqr-rJ-1ad" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ygR-yW-Q7b"/>
-                            <constraint firstItem="RxK-sR-oSE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="3:1" id="yj2-as-kel"/>
+                            <constraint firstItem="RxK-sR-oSE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="3.05:1" id="yj2-as-kel"/>
                             <constraint firstItem="5Y1-a1-t12" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zJi-T0-TmW"/>
                         </constraints>
                         <connections>
@@ -1212,6 +1226,7 @@
                         <outlet property="lowHighTempLabel" destination="tVE-je-K7H" id="8xo-pt-e06"/>
                         <outlet property="menuButton" destination="YhP-4l-saq" id="owi-27-t4M"/>
                         <outlet property="rightButton" destination="aFG-ow-2Qc" id="tvy-PW-AXS"/>
+                        <outlet property="shareButton" destination="8qG-VU-z59" id="LDX-7g-yiu"/>
                         <outlet property="spinerImageView" destination="7eN-77-PBI" id="Joe-Yb-HOy"/>
                         <outlet property="tempUnitLabel" destination="OFe-WY-wZQ" id="otp-qQ-njf"/>
                         <outlet property="upButton" destination="ltP-Sg-MZX" id="OGZ-h6-46h"/>
@@ -2557,6 +2572,31 @@
             </objects>
             <point key="canvasLocation" x="310.5" y="1184.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Lbm-Ji-Muv">
+            <objects>
+                <viewController id="ekY-2F-Cbn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3ut-z2-RAr"/>
+                        <viewControllerLayoutGuide type="bottom" id="cbi-M7-nY0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tbt-1V-pVX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6M-3A-PFh">
+                                <rect key="frame" x="67" y="214" width="240" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.24827586206896551" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3IB-u4-wRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758.5" y="1184.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Cancel 2" width="104" height="104"/>
@@ -2575,6 +2615,7 @@
         <image name="Share-page_weibo" width="320" height="256"/>
         <image name="Star" width="104" height="104"/>
         <image name="Trash" width="48" height="48"/>
+        <image name="Upload" width="50" height="50"/>
         <image name="clear-day.png" width="300" height="300"/>
         <image name="forecast_logo.png" width="468" height="200"/>
         <image name="rain.png" width="300" height="300"/>

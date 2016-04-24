@@ -80,8 +80,9 @@ class Next7DaysViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.layer.cornerRadius = 5
             let imageName = (DataStruct.jsonfile["daily"]["data"][indexPath.row + 1]["icon"].string! + "_bg.jpg") ?? DataStruct.errorString
             let img = UIImage(named:imageName)!
+
             cell.backgroundImageView.image = img
-            cell.backgroundImageView.alpha = 0.9
+            
             cell.backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
         
             cell.time.text = (DataStruct.jsonfile["daily"]["data"][indexPath.row + 1]["time"].string! ?? DataStruct.errorString).stringByReplacingOccurrencesOfString("y ", withString: "y, ")
@@ -102,7 +103,7 @@ class Next7DaysViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
         let cell  = collectionView.cellForItemAtIndexPath(indexPath) as! Next7DaysCollectionViewCell
-        cell.backgroundImageView.alpha = 0.9
+        cell.backgroundImageView.alpha = 1
     }
     
     var center : CGPoint!
