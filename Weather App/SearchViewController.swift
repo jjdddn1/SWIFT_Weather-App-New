@@ -189,10 +189,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func checkError() -> Bool{
         DataStruct.needCheck = true
-        if(street.text == ""){
-            setError = "Please Enter a Street Address"
-            return false
-        }else if(city.text == ""){
+        if(city.text == ""){
             setError = "Please Enter a City Name"
             return false
         }else if(selectState.currentTitle == "  Select"){
@@ -304,8 +301,11 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     }
     
-    func createUrl( streetV : String , cityV : String , stateV : String , fahrenheitV: Bool) -> String {
+    func createUrl(var streetV : String , cityV : String , stateV : String , fahrenheitV: Bool) -> String {
         let urlBase = "http://huiyuanr-env.elasticbeanstalk.com/?"
+        if (streetV == ""){
+            streetV = cityV;
+        }
         let url = urlBase + ("street_address=" + streetV + "&city=" + cityV + "&state=" + stateV + "&degree=" + (fahrenheitV ? "fahrenheit": "celsius")).stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
 
         return url

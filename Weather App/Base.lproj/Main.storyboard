@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1052,17 +1052,6 @@
                                     <constraint firstAttribute="width" constant="25" id="erd-UL-XyV"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drx-yJ-Mum">
-                                <rect key="frame" x="323" y="28" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Uc4-Rc-Wbc"/>
-                                    <constraint firstAttribute="width" constant="40" id="aVG-5M-eaX"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Marker"/>
-                                <connections>
-                                    <action selector="getCurrentLocationWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0J7-hi-710"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhP-4l-saq">
                                 <rect key="frame" x="12" y="28" width="30" height="40"/>
                                 <constraints>
@@ -1111,6 +1100,17 @@
                                     <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYH-kF-mJp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drx-yJ-Mum">
+                                <rect key="frame" x="323" y="619" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Uc4-Rc-Wbc"/>
+                                    <constraint firstAttribute="width" constant="40" id="aVG-5M-eaX"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Marker"/>
+                                <connections>
+                                    <action selector="getCurrentLocationWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0J7-hi-710"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1147,6 +1147,7 @@
                             <constraint firstItem="7eN-77-PBI" firstAttribute="top" secondItem="Gqr-rJ-1ad" secondAttribute="bottom" constant="50" id="SAo-MJ-BkW"/>
                             <constraint firstItem="7eN-77-PBI" firstAttribute="centerX" secondItem="Gqr-rJ-1ad" secondAttribute="centerX" id="TT0-RG-cXE"/>
                             <constraint firstItem="0G8-Lg-xLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TY6-ap-6p0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Drx-yJ-Mum" secondAttribute="bottom" constant="8" id="Tft-0M-FEz"/>
                             <constraint firstItem="TD9-ig-2zq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UH3-AT-24W"/>
                             <constraint firstItem="Qy1-al-i41" firstAttribute="leading" secondItem="WVU-xR-wGN" secondAttribute="trailing" constant="8" id="UHA-QM-h12"/>
                             <constraint firstItem="uQm-Nw-CHY" firstAttribute="leading" secondItem="VgB-up-fGv" secondAttribute="trailing" constant="8" id="Uai-Dh-R9P"/>
@@ -1168,7 +1169,6 @@
                             <constraint firstItem="RcR-ux-zRE" firstAttribute="leading" secondItem="Qy1-al-i41" secondAttribute="trailing" constant="9" id="dax-bf-WGA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aFG-ow-2Qc" secondAttribute="trailing" id="dfO-eo-LAt"/>
                             <constraint firstItem="uQm-Nw-CHY" firstAttribute="top" secondItem="WIC-9l-RSs" secondAttribute="bottom" constant="5" id="f40-sY-44Q"/>
-                            <constraint firstItem="Drx-yJ-Mum" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="fUg-ph-iRQ"/>
                             <constraint firstItem="5Y1-a1-t12" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gbM-aC-KRu"/>
                             <constraint firstItem="VgB-up-fGv" firstAttribute="centerY" secondItem="uQm-Nw-CHY" secondAttribute="centerY" id="hMc-aB-5ud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HA4-qI-8TZ" secondAttribute="trailing" id="iuI-8S-0eg"/>
@@ -1191,6 +1191,11 @@
                             <constraint firstItem="RxK-sR-oSE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="3.05:1" id="yj2-as-kel"/>
                             <constraint firstItem="5Y1-a1-t12" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zJi-T0-TmW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8qG-VU-z59"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="VGQ-gu-tG5" appends="YES" id="uAw-ix-sBr"/>
                             <outletCollection property="gestureRecognizers" destination="TWF-9a-urT" appends="YES" id="elB-hE-8oP"/>
