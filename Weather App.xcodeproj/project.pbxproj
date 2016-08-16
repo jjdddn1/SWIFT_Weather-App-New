@@ -30,6 +30,10 @@
 		8629B04A1C96332E00463DE6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B0491C96332E00463DE6 /* DetailViewController.swift */; };
 		8629B04C1C96414500463DE6 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B04B1C96414500463DE6 /* DetailTableViewController.swift */; };
 		8629B04E1C965EAE00463DE6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8629B04D1C965EAE00463DE6 /* SearchViewController.swift */; };
+		864CAC0C1D629618003F4268 /* AboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864CAC0A1D629618003F4268 /* AboutViewController.storyboard */; };
+		864CAC0E1D629657003F4268 /* HistoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864CAC0D1D629657003F4268 /* HistoryViewController.storyboard */; };
+		864CAC111D629683003F4268 /* ShareViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864CAC0F1D629683003F4268 /* ShareViewController.storyboard */; };
+		864CAC131D6296DA003F4268 /* LocationCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864CAC121D6296DA003F4268 /* LocationCollection.storyboard */; };
 		865AE5E71CBCA24F0089D394 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AE5E61CBCA24F0089D394 /* SearchHistoryViewController.swift */; };
 		865AE5E91CBD96A80089D394 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AE5E81CBD96A80089D394 /* Location.swift */; };
 		86BC3C761C968AA800A91FE5 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */; };
@@ -128,6 +132,10 @@
 		8629B0491C96332E00463DE6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8629B04B1C96414500463DE6 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		8629B04D1C965EAE00463DE6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		864CAC0B1D629618003F4268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutViewController.storyboard; sourceTree = "<group>"; };
+		864CAC0D1D629657003F4268 /* HistoryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HistoryViewController.storyboard; sourceTree = "<group>"; };
+		864CAC101D629683003F4268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ShareViewController.storyboard; sourceTree = "<group>"; };
+		864CAC121D6296DA003F4268 /* LocationCollection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LocationCollection.storyboard; sourceTree = "<group>"; };
 		865AE5E61CBCA24F0089D394 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
 		865AE5E81CBD96A80089D394 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		86BC3C751C968AA800A91FE5 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -341,6 +349,10 @@
 				865AE5E61CBCA24F0089D394 /* SearchHistoryViewController.swift */,
 				8611152B1CC88FE2002FD7D0 /* AddCityViewController.swift */,
 				86F76BAD1C93BC9E00ACBCDB /* Main.storyboard */,
+				864CAC121D6296DA003F4268 /* LocationCollection.storyboard */,
+				864CAC0F1D629683003F4268 /* ShareViewController.storyboard */,
+				864CAC0D1D629657003F4268 /* HistoryViewController.storyboard */,
+				864CAC0A1D629618003F4268 /* AboutViewController.storyboard */,
 				86F76BB31C93BC9E00ACBCDB /* Assets.xcassets */,
 				86F76BB51C93BC9F00ACBCDB /* LaunchScreen.storyboard */,
 				86EDCBFB1C93EA7100812D2B /* UIImage+Gif.swift */,
@@ -484,16 +496,19 @@
 				86EDCC2D1C93EB6600812D2B /* rain.png in Resources */,
 				8629B0371C95F35B00463DE6 /* sleet_bg.jpg in Resources */,
 				86F76BB71C93BC9F00ACBCDB /* LaunchScreen.storyboard in Resources */,
+				864CAC0E1D629657003F4268 /* HistoryViewController.storyboard in Resources */,
 				86EDCC261C93EB6600812D2B /* authentic-03.png in Resources */,
 				86EDCC2E1C93EB6600812D2B /* sleet.png in Resources */,
 				86EDCC301C93EB6600812D2B /* fog.png in Resources */,
 				86BC3C7E1C96ADED00A91FE5 /* partly-cloudy-day_bg.jpg in Resources */,
 				8629B02F1C95F1AE00463DE6 /* partly-cloudy-night_bg.jpg in Resources */,
 				86EDCC401C93F11700812D2B /* Double_Up.png in Resources */,
+				864CAC0C1D629618003F4268 /* AboutViewController.storyboard in Resources */,
 				86EDCC291C93EB6600812D2B /* forecast_logo.png in Resources */,
 				86EDCC271C93EB6600812D2B /* authentic-04.png in Resources */,
 				86EDCC3A1C93F09F00812D2B /* Double_Left.png in Resources */,
 				86EDCC2C1C93EB6600812D2B /* snow.png in Resources */,
+				864CAC131D6296DA003F4268 /* LocationCollection.storyboard in Resources */,
 				8629B0391C95F3E000463DE6 /* snow_bg.jpg in Resources */,
 				8629B01A1C9541CF00463DE6 /* 4244272-night.jpg in Resources */,
 				86EDCC211C93EB6600812D2B /* refresh-4.gif in Resources */,
@@ -522,6 +537,7 @@
 				86F76BAF1C93BC9E00ACBCDB /* Main.storyboard in Resources */,
 				86EDCC221C93EB6600812D2B /* refresh-5.gif in Resources */,
 				8629B0331C95F24700463DE6 /* fog_bg.jpg in Resources */,
+				864CAC111D629683003F4268 /* ShareViewController.storyboard in Resources */,
 				86EDCC1F1C93EB6600812D2B /* refresh-2.gif in Resources */,
 				8629B02D1C95F14E00463DE6 /* rain_bg.jpg in Resources */,
 				8629B03D1C95F53300463DE6 /* clear-night_bg.jpg in Resources */,
@@ -653,6 +669,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		864CAC0A1D629618003F4268 /* AboutViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				864CAC0B1D629618003F4268 /* Base */,
+			);
+			name = AboutViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		864CAC0F1D629683003F4268 /* ShareViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				864CAC101D629683003F4268 /* Base */,
+			);
+			name = ShareViewController.storyboard;
+			sourceTree = "<group>";
+		};
 		86F76BAD1C93BC9E00ACBCDB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

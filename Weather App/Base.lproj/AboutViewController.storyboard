@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lhL-OI-1WU">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--About View Controller-->
+        <scene sceneID="jrQ-Xk-6jP">
+            <objects>
+                <viewController id="lhL-OI-1WU" customClass="AboutViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NcK-4s-Nho"/>
+                        <viewControllerLayoutGuide type="bottom" id="dbD-os-3ou"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7PK-z7-fDG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3Z-Vb-t0A">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkg-Et-2bQ">
+                                        <rect key="frame" x="161" y="32" width="61" height="25"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXD-s4-6uG">
+                                        <rect key="frame" x="8" y="18" width="30" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="&lt;">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="lhL-OI-1WU" eventType="touchUpInside" id="AZu-S1-OG4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gXD-s4-6uG" secondAttribute="bottom" constant="8" id="EXK-wS-C8c"/>
+                                    <constraint firstItem="bkg-Et-2bQ" firstAttribute="centerX" secondItem="a3Z-Vb-t0A" secondAttribute="centerX" id="dVK-8c-Icl"/>
+                                    <constraint firstAttribute="bottom" secondItem="bkg-Et-2bQ" secondAttribute="bottom" constant="8" id="drA-fp-Q5O"/>
+                                    <constraint firstAttribute="height" constant="65" id="j2O-ng-nKd"/>
+                                    <constraint firstItem="gXD-s4-6uG" firstAttribute="leading" secondItem="a3Z-Vb-t0A" secondAttribute="leading" constant="8" id="oRg-6P-mO9"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZO-F6-WMy">
+                                <rect key="frame" x="90" y="80" width="195" height="37"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKb-c7-QjW">
+                                <rect key="frame" x="170" y="125" width="35" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-zn-zYX">
+                                <rect key="frame" x="16" y="165" width="343" height="84"/>
+                                <string key="text">This is a small app help you to find current &amp; future weather. This app based heavily on swiping, and bascially you can go everywhere by just swiping!</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you have any question or suggestion, please send me a feedback. Hope you like it! Enjoy!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rs-Bp-lcJ">
+                                <rect key="frame" x="16" y="293" width="343" height="63"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLP-Rg-UY0">
+                                <rect key="frame" x="238" y="595" width="131" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="XL5-xv-l4S"/>
+                                    <constraint firstAttribute="height" constant="64" id="hhJ-bI-R5N"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="forecast_logo.png"/>
+                                <connections>
+                                    <action selector="foreCastButtonPressed:" destination="lhL-OI-1WU" eventType="touchUpInside" id="NcQ-Hu-NjS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered By: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq7-QO-YMt">
+                                <rect key="frame" x="241" y="584" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="F5Y-zn-zYX" secondAttribute="trailing" id="4ax-Y0-ucV"/>
+                            <constraint firstItem="a3Z-Vb-t0A" firstAttribute="leading" secondItem="7PK-z7-fDG" secondAttribute="leadingMargin" constant="-20" id="57i-mb-PlK"/>
+                            <constraint firstItem="sKb-c7-QjW" firstAttribute="top" secondItem="sZO-F6-WMy" secondAttribute="bottom" constant="8" id="5nD-Z5-xRG"/>
+                            <constraint firstItem="dbD-os-3ou" firstAttribute="top" secondItem="eLP-Rg-UY0" secondAttribute="bottom" constant="8" id="Cci-Zb-oOk"/>
+                            <constraint firstItem="sZO-F6-WMy" firstAttribute="top" secondItem="a3Z-Vb-t0A" secondAttribute="bottom" constant="15" id="NHe-ja-Id4"/>
+                            <constraint firstItem="sZO-F6-WMy" firstAttribute="centerX" secondItem="7PK-z7-fDG" secondAttribute="centerX" id="NMX-Rh-LGe"/>
+                            <constraint firstItem="3Rs-Bp-lcJ" firstAttribute="top" secondItem="F5Y-zn-zYX" secondAttribute="bottom" constant="44" id="UOR-KR-h1x"/>
+                            <constraint firstItem="3Rs-Bp-lcJ" firstAttribute="trailing" secondItem="F5Y-zn-zYX" secondAttribute="trailing" id="WDl-Tm-QN7"/>
+                            <constraint firstItem="eLP-Rg-UY0" firstAttribute="top" secondItem="gq7-QO-YMt" secondAttribute="bottom" constant="-10" id="aDf-u3-AMs"/>
+                            <constraint firstItem="F5Y-zn-zYX" firstAttribute="top" secondItem="sKb-c7-QjW" secondAttribute="bottom" constant="20" id="cNn-W1-m4O"/>
+                            <constraint firstItem="a3Z-Vb-t0A" firstAttribute="top" secondItem="NcK-4s-Nho" secondAttribute="bottom" constant="-20" id="eJJ-iz-oPk"/>
+                            <constraint firstItem="sKb-c7-QjW" firstAttribute="centerX" secondItem="sZO-F6-WMy" secondAttribute="centerX" id="jGd-na-vuE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a3Z-Vb-t0A" secondAttribute="trailing" constant="-20" id="pgX-7d-C0M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eLP-Rg-UY0" secondAttribute="trailing" constant="-10" id="sD0-LQ-PVk"/>
+                            <constraint firstItem="3Rs-Bp-lcJ" firstAttribute="leading" secondItem="F5Y-zn-zYX" secondAttribute="leading" id="yS4-kO-psA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="F5Y-zn-zYX" secondAttribute="leading" id="yb3-IM-HG2"/>
+                            <constraint firstItem="gq7-QO-YMt" firstAttribute="leading" secondItem="eLP-Rg-UY0" secondAttribute="leading" constant="3" id="ycE-Rk-T0k"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="euQ-Vc-v4z" appends="YES" id="DmH-fg-Lkk"/>
+                            <outletCollection property="gestureRecognizers" destination="6Hi-LP-FTO" appends="YES" id="ZAF-Dr-MkP"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7EM-yU-nwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="euQ-Vc-v4z">
+                    <connections>
+                        <action selector="swipeLeft:" destination="lhL-OI-1WU" id="Yju-hZ-tZ6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="6Hi-LP-FTO">
+                    <connections>
+                        <action selector="swipeRight:" destination="lhL-OI-1WU" id="2SQ-2J-IIf"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-612.5" y="381.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="forecast_logo.png" width="468" height="200"/>
+    </resources>
+</document>
